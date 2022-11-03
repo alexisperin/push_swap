@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 08:29:02 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/03 09:02:30 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/03 09:12:00 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ra(t_stack **stack_a)
 	if (!stack_a || !(*stack_a)->next)
 		return ;
 	first = *stack_a;
-	stack_a = &(*stack_a)->next;
+	*stack_a = (*stack_a)->next;
 	tmp = *stack_a;
 	while (tmp->next)
 		tmp = tmp->next;
@@ -35,7 +35,7 @@ void	rb(t_stack **stack_b)
 	if (!stack_b || !(*stack_b)->next)
 		return ;
 	first = *stack_b;
-	stack_b = &(*stack_b)->next;
+	*stack_b = (*stack_b)->next;
 	tmp = *stack_b;
 	while (tmp->next)
 		tmp = tmp->next;
