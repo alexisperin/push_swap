@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:32:57 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/04 11:53:50 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/04 14:05:14 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ t_stack	*free_stack(t_stack *stack);
 int		is_sorted(t_stack *stack);
 int		stack_max(t_stack *stack);
 int		stack_min(t_stack *stack);
+
+int		median(t_stack *stack);
 
 // Operations
 void	ft_swap(t_stack *stack);

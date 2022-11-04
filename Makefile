@@ -6,7 +6,7 @@
 #    By: aperin <aperin@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 11:30:34 by aperin            #+#    #+#              #
-#    Updated: 2022/11/04 11:54:32 by aperin           ###   ########.fr        #
+#    Updated: 2022/11/04 14:10:43 by aperin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,6 @@ NAME		= push_swap
 
 SRC_FILE	= main.c \
 				stack/stack_init.c \
-				stack/stack_utils.c \
 				utils/ft_atoi.c \
 				error/error.c \
 				operations/operations.c \
@@ -22,7 +21,9 @@ SRC_FILE	= main.c \
 				operations/push.c \
 				operations/rotate.c \
 				operations/reverse_rotate.c \
-				sorting/sort_3.c
+				sorting/sort_3.c \
+				sorting/stack_3_utils.c \
+				sorting/median.c
 				
 SRCS_DIR	= srcs
 OBJSDIR		= objs

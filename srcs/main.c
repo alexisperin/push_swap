@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:33:48 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/04 12:03:15 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/04 14:05:47 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ int	main(int ac, char **av)
 	stack_a = init_stack(ac, av);
 	if (!stack_a)
 		return (print_error());
-	sort_3(&stack_a);
-	print_stack(stack_a);
+	printf("%d\n", median(stack_a));
+	// sort_3(&stack_a);
+	// print_stack(stack_a);
 	free_stack(stack_a);
 	return (0);
 }
