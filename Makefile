@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aperin <aperin@student.42.fr>              +#+  +:+       +#+         #
+#    By: aperin <aperin@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 11:30:34 by aperin            #+#    #+#              #
-#    Updated: 2022/11/03 11:15:59 by aperin           ###   ########.fr        #
+#    Updated: 2022/11/04 10:27:11 by aperin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ SRC_FILE	= main.c \
 				stack_utils/stack_utils.c \
 				utils/ft_atoi.c \
 				error/error.c \
+				operations/operations.c \
 				operations/swap.c \
 				operations/push.c \
 				operations/rotate.c \

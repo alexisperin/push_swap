@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:33:48 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/03 11:09:50 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/04 10:32:51 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ int	main(int ac, char **av)
 	print_stack(stack_a);
 	printf("Stack b\n");
 	print_stack(stack_b);
-	rrr(&stack_a, &stack_b);
-	rrr(&stack_a, &stack_b);
+	pa(&stack_a, &stack_b);
+	pb(&stack_a, &stack_b);
 	printf("Stack a\n");
 	print_stack(stack_a);
 	printf("Stack b\n");

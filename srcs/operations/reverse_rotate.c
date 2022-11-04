@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 10:52:10 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/03 11:08:34 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/04 10:18:13 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,38 +14,19 @@
 
 void	rra(t_stack **stack_a)
 {
-	t_stack	*last;
-	t_stack	*tmp;
-
-	if (!*stack_a || !(*stack_a)->next)
-		return ;
-	tmp = *stack_a;
-	while (tmp->next->next)
-		tmp = tmp->next;
-	last = tmp->next;
-	tmp->next = 0;
-	last->next = *stack_a;
-	*stack_a = last;
+	ft_reverse_rotate(stack_a);
+	write(1, "rra\n", 4);
 }
 
 void	rrb(t_stack **stack_b)
 {
-	t_stack	*last;
-	t_stack	*tmp;
-
-	if (!*stack_b || !(*stack_b)->next)
-		return ;
-	tmp = *stack_b;
-	while (tmp->next->next)
-		tmp = tmp->next;
-	last = tmp->next;
-	tmp->next = 0;
-	last->next = *stack_b;
-	*stack_b = last;
+	ft_reverse_rotate(stack_b);
+	write(1, "rrb\n", 4);
 }
 
 void	rrr(t_stack **stack_a, t_stack **stack_b)
 {
-	rra(stack_a);
-	rrb(stack_b);
+	ft_reverse_rotate(stack_a);
+	ft_reverse_rotate(stack_b);
+	write(1, "rrr\n", 4);
 }
