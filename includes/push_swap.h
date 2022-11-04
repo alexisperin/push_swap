@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:32:57 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/04 10:33:52 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/04 11:53:50 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,14 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
-// Stack utils
+// Stack init and free
 t_stack	*init_stack(int ac, char **av);
 t_stack	*free_stack(t_stack *stack);
+
+// Stack utils
+int		is_sorted(t_stack *stack);
+int		stack_max(t_stack *stack);
+int		stack_min(t_stack *stack);
 
 // Operations
 void	ft_swap(t_stack *stack);
@@ -34,9 +39,9 @@ void	ft_rotate(t_stack **stack);
 void	ft_reverse_rotate(t_stack **stack);
 
 // Actions
-void	sa(t_stack *stack_a);
-void	sb(t_stack *stack_b);
-void	ss(t_stack *stack_a, t_stack *stack_b);
+void	sa(t_stack **stack_a);
+void	sb(t_stack **stack_b);
+void	ss(t_stack **stack_a, t_stack **stack_b);
 void	pa(t_stack **stack_a, t_stack **stack_b);
 void	pb(t_stack **stack_a, t_stack **stack_b);
 void	ra(t_stack **stack_a);
@@ -45,6 +50,9 @@ void	rr(t_stack **stack_a, t_stack **stack_b);
 void	rra(t_stack **stack_a);
 void	rrb(t_stack **stack_b);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
+
+// Sorting
+void	sort_3(t_stack **stack);
 
 // Error
 int		print_error(void);

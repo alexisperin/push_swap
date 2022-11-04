@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   sort_3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 11:33:48 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/04 12:03:15 by aperin           ###   ########.fr       */
+/*   Created: 2022/11/04 10:58:47 by aperin            #+#    #+#             */
+/*   Updated: 2022/11/04 11:43:18 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-void	print_stack(t_stack *stack)
+void	sort_3(t_stack **stack)
 {
-	while (stack)
+	if (is_sorted(*stack))
+		return ;
+	if ((*stack)->value == stack_max(*stack))
 	{
-		printf("%d\n", stack->value);
-		stack = stack->next;
+		ra(stack);
+		if (!is_sorted(*stack))
+			sa(stack);
 	}
-}
-
-int	main(int ac, char **av)
-{
-	t_stack	*stack_a;
-
-	if (ac < 2)
-		return (0);
-	stack_a = init_stack(ac, av);
-	if (!stack_a)
-		return (print_error());
-	sort_3(&stack_a);
-	print_stack(stack_a);
-	free_stack(stack_a);
-	return (0);
+	else if ((*stack)->value == stack_min(*stack))
+	{
+		rra(stack);
+		sa(stack);
+	}
+	else
+	{
+		if ((*stack)->value > (*stack)->next->value)
+			sa(stack);
+		else
+			rra(stack);
+	}
 }

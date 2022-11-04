@@ -6,27 +6,27 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:37:12 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/04 10:23:52 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/04 11:06:12 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	sa(t_stack *stack_a)
+void	sa(t_stack **stack_a)
 {
-	ft_swap(stack_a);
+	ft_swap(*stack_a);
 	write(1, "sa\n", 3);
 }
 
-void	sb(t_stack *stack_b)
+void	sb(t_stack **stack_b)
 {
-	ft_swap(stack_b);
+	ft_swap(*stack_b);
 	write(1, "sb\n", 3);
 }
 
-void	ss(t_stack *stack_a, t_stack *stack_b)
+void	ss(t_stack **stack_a, t_stack **stack_b)
 {
-	ft_swap(stack_a);
-	ft_swap(stack_b);
+	ft_swap(*stack_a);
+	ft_swap(*stack_b);
 	write(1, "ss\n", 3);
 }
