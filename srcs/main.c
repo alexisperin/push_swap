@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:33:48 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/04 14:05:47 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/04 18:40:41 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,18 @@ void	print_stack(t_stack *stack)
 int	main(int ac, char **av)
 {
 	t_stack	*stack_a;
+	t_stack	*stack_b;
 
 	if (ac < 2)
 		return (0);
 	stack_a = init_stack(ac, av);
 	if (!stack_a)
 		return (print_error());
-	printf("%d\n", median(stack_a));
-	// sort_3(&stack_a);
+	stack_b = 0;
+	sort(&stack_a, &stack_b);
+	// printf("---Stack A---\n");
 	// print_stack(stack_a);
 	free_stack(stack_a);
+	free_stack(stack_b);
 	return (0);
 }

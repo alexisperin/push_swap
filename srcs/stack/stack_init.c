@@ -6,24 +6,11 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 13:47:08 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/04 11:44:12 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/04 16:53:25 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-
-t_stack	*free_stack(t_stack *stack)
-{
-	t_stack	*tmp;
-
-	while (stack)
-	{
-		tmp = stack->next;
-		free(stack);
-		stack = tmp;
-	}
-	return (0);
-}
 
 static int	is_duplicate(int val, t_stack *stack)
 {
@@ -49,6 +36,8 @@ static t_stack	*stack_new(const char *str)
 		free(stack);
 		return (0);
 	}
+	stack->begin_sorted = 0;
+	stack->partition = 0;
 	stack->next = 0;
 	return (stack);
 }
@@ -73,4 +62,17 @@ t_stack	*init_stack(int ac, char **av)
 		i++;
 	}
 	return (stack_a);
+}
+
+t_stack	*free_stack(t_stack *stack)
+{
+	t_stack	*tmp;
+
+	while (stack)
+	{
+		tmp = stack->next;
+		free(stack);
+		stack = tmp;
+	}
+	return (0);
 }

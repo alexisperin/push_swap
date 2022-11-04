@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 13:54:33 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/04 14:07:57 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/04 18:10:04 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	nb_lower(t_stack *stack, int val)
 	int	count;
 
 	count = 0;
-	while (stack)
+	while (stack && !stack->begin_sorted)
 	{
 		if (stack->value < val)
 			count++;
@@ -31,7 +31,7 @@ static int	nb_higher(t_stack *stack, int val)
 	int	count;
 
 	count = 0;
-	while (stack)
+	while (stack && !stack->begin_sorted)
 	{
 		if (stack->value > val)
 			count++;
@@ -40,7 +40,7 @@ static int	nb_higher(t_stack *stack, int val)
 	return (count);
 }
 
-int	median(t_stack *stack)
+int	get_median(t_stack *stack)
 {
 	t_stack	*tmp;
 	int		lower;
@@ -49,7 +49,7 @@ int	median(t_stack *stack)
 	if (!stack->next)
 		return (stack->value);
 	tmp = stack;
-	while (tmp)
+	while (tmp && !tmp->begin_sorted)
 	{
 		lower = nb_lower(stack, tmp->value);
 		higher = nb_higher(stack, tmp->value);

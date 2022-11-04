@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:32:57 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/04 14:05:14 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/04 19:12:24 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,14 @@
 typedef struct s_stack
 {
 	int				value;
+	int				begin_sorted;
+	int				partition;
 	struct s_stack	*next;
 }					t_stack;
 
 // Stack init and free
 t_stack	*init_stack(int ac, char **av);
 t_stack	*free_stack(t_stack *stack);
-
-// Stack utils
-int		is_sorted(t_stack *stack);
-int		stack_max(t_stack *stack);
-int		stack_min(t_stack *stack);
-
-int		median(t_stack *stack);
 
 // Operations
 void	ft_swap(t_stack *stack);
@@ -53,8 +48,20 @@ void	rra(t_stack **stack_a);
 void	rrb(t_stack **stack_b);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
 
-// Sorting
-void	sort_3(t_stack **stack);
+// Sort
+void	sort(t_stack **stack_a, t_stack **stack_b);
+void	sort_three(t_stack **stack);
+void	sort_first_three(t_stack **stack);
+
+// Sort utils
+int		sorted(t_stack *stack);
+int		stack_size(t_stack *stack);
+int		stack_size_partition(t_stack *stack);
+int		empty(t_stack **stack);
+int		stack_three_max(t_stack *stack);
+int		stack_three_min(t_stack *stack);
+
+int		get_median(t_stack *stack);
 
 // Error
 int		print_error(void);

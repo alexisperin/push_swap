@@ -6,7 +6,7 @@
 #    By: aperin <aperin@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 11:30:34 by aperin            #+#    #+#              #
-#    Updated: 2022/11/04 14:10:43 by aperin           ###   ########.fr        #
+#    Updated: 2022/11/04 17:17:23 by aperin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,9 +21,11 @@ SRC_FILE	= main.c \
 				operations/push.c \
 				operations/rotate.c \
 				operations/reverse_rotate.c \
-				sorting/sort_3.c \
-				sorting/stack_3_utils.c \
-				sorting/median.c
+				sort/sort.c \
+				sort/sort_three.c \
+				sort/sort_three_utils.c \
+				sort/sort_utils.c \
+				sort/median.c
 				
 SRCS_DIR	= srcs
 OBJSDIR		= objs
