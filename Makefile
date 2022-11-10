@@ -6,7 +6,7 @@
 #    By: aperin <aperin@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 11:30:34 by aperin            #+#    #+#              #
-#    Updated: 2022/11/10 18:25:02 by aperin           ###   ########.fr        #
+#    Updated: 2022/11/10 18:44:26 by aperin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ SRC_FILE	= main.c \
 				sort/sort_three_utils.c \
 				sort/sort_utils.c \
 				sort/sort_utils2.c \
-				sort/sort.c
+				sort/sort.c \
+				sort/threeway_partition_utils.c
 				
 SRCS_DIR	= srcs
 OBJSDIR		= objs

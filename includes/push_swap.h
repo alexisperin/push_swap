@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:32:57 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/10 17:57:04 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/10 18:43:51 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,10 @@ t_stack	*stack_last(t_stack *stack);
 int		empty(t_stack **stack);
 int		stack_only_one_partition(t_stack *stack);
 void	stack_set_sorted(t_stack *stack_a);
+
+// Threeway partition utils
+void	push_low(t_stack **stack_a, t_stack **stack_b, int *to_push);
+void	push_high(t_stack **stack_a, t_stack **stack_b, int *to_push);
 
 // Sort three utils
 int		stack_three_max(t_stack *stack);

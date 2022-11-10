@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 10:58:47 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/10 18:13:30 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/10 18:47:21 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,13 @@ static void	twoway_partition2(t_stack **stack_a, int partition)
 	}
 }
 
-static void	twoway_partition(t_stack **stack_a, t_stack **stack_b)
+static void	twoway_partition(t_stack **stack_a, t_stack **stack_b, int size)
 {
 	int		median;
-	int		size;
 	int		to_push;
 	int		partition;
 
 	median = get_median(*stack_a);
-	size = stack_size_partition(*stack_a);
 	to_push = size / 2;
 	partition = (*stack_a)->partition;
 	while (to_push > 0)
@@ -61,6 +59,32 @@ static void	twoway_partition(t_stack **stack_a, t_stack **stack_b)
 	twoway_partition2(stack_a, partition);
 }
 
+static void	threeway_partition(t_stack **stack_a, t_stack **stack_b, int size)
+{
+	int		median_low;
+	int		median_high;
+	int		to_push;
+	int		partition;
+
+	median_low = get_median_low(*stack_a);
+	median_high = get_median_high(*stack_a);
+	to_push = (size / 3) * 2; // ???????
+	partition = (*stack_a)->partition;
+	while (to_push > 0)
+	{
+		if ((*stack_a)->value < median_low)
+			push_low(stack_a, stack_b, &to_push);
+		else if ((*stack_a)->value < median_high)
+			push_high(stack_a, stack_b, &to_push);
+		else
+		{
+			(*stack_a)->partition = partition * 3;
+			ra(stack_a);
+		}
+	}
+	threeway_partition2(stack_a, partition);
+}
+
 static void	push_next_partition(t_stack **stack_a, t_stack **stack_b)
 {
 	int	partition;
@@ -75,7 +99,7 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 	while (!sorted(*stack_a) || !empty(stack_b))
 	{
 		while (stack_size_partition(*stack_a) > 3)
-			twoway_partition(stack_a, stack_b);
+			twoway_partition(stack_a, stack_b, stack_size_partition(*stack_a));
 		if (!sorted(*stack_a) && stack_size_partition(*stack_a) > 1)
 		{
 			if (stack_size(*stack_a) <= 3)
