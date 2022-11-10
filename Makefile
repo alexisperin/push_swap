@@ -6,7 +6,7 @@
 #    By: aperin <aperin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 11:30:34 by aperin            #+#    #+#              #
-#    Updated: 2022/11/10 10:31:24 by aperin           ###   ########.fr        #
+#    Updated: 2022/11/10 15:47:42 by aperin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRC_FILE	= main.c \
 				sort/sort_three.c \
 				sort/sort_three_utils.c \
 				sort/sort_utils.c \
+				sort/sort_utils2.c \
 				sort/median.c \
 				sort/sort.c
 				# sort/sort_bis.c

@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:32:57 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/10 11:17:23 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/10 15:51:16 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ typedef struct s_stack
 	int				partition;
 	struct s_stack	*next;
 }					t_stack;
+
+void	print_stack(t_stack *stack); // TO REMOVE !!!
 
 // Stack init and free
 t_stack	*init_stack(int ac, char **av);
@@ -58,6 +60,9 @@ int		stack_size(t_stack *stack);
 int		stack_size_partition(t_stack *stack);
 t_stack	*stack_last(t_stack *stack);
 int		empty(t_stack **stack);
+int		stack_only_one_partition(t_stack *stack);
+
+// Sort three utils
 int		stack_three_max(t_stack *stack);
 int		stack_three_min(t_stack *stack);
 
