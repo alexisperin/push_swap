@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 17:09:54 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/10 17:13:09 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/10 18:21:45 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 
 void	sort_three(t_stack **stack)
 {
-	if ((*stack)->value == stack_three_max(*stack))
+	if (stack_size(*stack) == 2)
+	{
+		if ((*stack)->value > (*stack)->next->value)
+			sa(stack);
+	}
+	else if ((*stack)->value == stack_three_max(*stack))
 	{
 		ra(stack);
 		if (!sorted(*stack))
@@ -36,7 +41,12 @@ void	sort_three(t_stack **stack)
 
 void	sort_first_three(t_stack **stack)
 {
-	if ((*stack)->value > (*stack)->next->value)
+	if (stack_size_partition(*stack) == 2)
+	{
+		if ((*stack)->value > (*stack)->next->value)
+			sa(stack);
+	}
+	else if ((*stack)->value > (*stack)->next->value)
 	{
 		sa(stack);
 		if ((*stack)->next->value == stack_three_max(*stack))

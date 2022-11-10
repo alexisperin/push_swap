@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:32:57 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/10 17:17:09 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/10 17:57:04 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,10 @@ void	stack_set_sorted(t_stack *stack_a);
 int		stack_three_max(t_stack *stack);
 int		stack_three_min(t_stack *stack);
 
+// Median
 int		get_median(t_stack *stack);
+int		get_median_low(t_stack *stack);
+int		get_median_high(t_stack *stack);
 
 // Error
 int		print_error(void);

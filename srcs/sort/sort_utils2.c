@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_utils2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 15:40:35 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/10 17:16:54 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/10 18:05:08 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ int	stack_only_one_partition(t_stack *stack)
 	return (1);
 }
 
-void	stack_set_sorted(t_stack *stack_a)
+void	stack_set_sorted(t_stack *stack)
 {
-	while (stack_a && stack_a->partition != 0)
+	while (stack && stack->partition != 0)
 	{
-		stack_a->partition = 0;
-		stack_a = stack_a->next;
+		stack->partition = 0;
+		stack = stack->next;
 	}
 }
