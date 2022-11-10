@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   median.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 13:54:33 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/08 19:19:39 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/10 11:06:36 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-static int	nb_lower(t_stack *stack, int val)
+static int	nb_lower(t_stack *stack, int val, int partition)
 {
 	int	count;
 
 	count = 0;
-	while (stack && !stack->begin_sorted)
+	while (stack && stack->partition == partition)
 	{
 		if (stack->value < val)
 			count++;
@@ -26,12 +26,12 @@ static int	nb_lower(t_stack *stack, int val)
 	return (count);
 }
 
-static int	nb_higher(t_stack *stack, int val)
+static int	nb_higher(t_stack *stack, int val, int partition)
 {
 	int	count;
 
 	count = 0;
-	while (stack && !stack->begin_sorted)
+	while (stack && stack->partition == partition)
 	{
 		if (stack->value > val)
 			count++;
@@ -43,37 +43,19 @@ static int	nb_higher(t_stack *stack, int val)
 int	get_median(t_stack *stack)
 {
 	t_stack	*tmp;
+	int		partition;
 	int		lower;
 	int		higher;
 
 	if (!stack->next)
 		return (stack->value);
 	tmp = stack;
-	while (tmp && !tmp->begin_sorted)
+	partition = tmp->partition;
+	while (tmp && tmp->partition == partition)
 	{
-		lower = nb_lower(stack, tmp->value);
-		higher = nb_higher(stack, tmp->value);
-		if (lower == higher || lower + 1 == higher)
-			break ;
-		tmp = tmp->next;
-	}
-	return (tmp->value);
-}
-
-int	get_median_low(t_stack *stack)
-{
-	t_stack	*tmp;
-	int		lower;
-	int		higher;
-
-	if (!stack->next)
-		return (stack->value);
-	tmp = stack;
-	while (tmp)
-	{
-		lower = nb_lower(stack, tmp->value);
-		higher = nb_higher(stack, tmp->value);
-		if (lower == higher || lower + 1 == higher)
+		lower = nb_lower(stack, tmp->value, partition);
+		higher = nb_higher(stack, tmp->value, partition);
+		if (lower == higher || lower == higher + 1)
 			break ;
 		tmp = tmp->next;
 	}

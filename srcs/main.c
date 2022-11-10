@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:33:48 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/04 18:40:41 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/10 12:07:23 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,14 @@ int	main(int ac, char **av)
 		return (print_error());
 	stack_b = 0;
 	sort(&stack_a, &stack_b);
-	// printf("---Stack A---\n");
-	// print_stack(stack_a);
+	if (sorted(stack_a))
+		printf("SORTED");
+	else
+		printf("NOT SORTED");
+	printf("---Stack A---\n");
+	print_stack(stack_a);
+	printf("---Stack B---\n");
+	print_stack(stack_b);
 	free_stack(stack_a);
 	free_stack(stack_b);
 	return (0);

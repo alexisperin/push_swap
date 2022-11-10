@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 11:44:50 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/04 19:13:06 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/10 11:58:18 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,25 @@ int	stack_size(t_stack *stack)
 int	stack_size_partition(t_stack *stack)
 {
 	int	size;
+	int	partition;
 
 	size = 0;
-	while (stack && !stack->begin_sorted && !stack->partition)
+	partition = stack->partition;
+	if (!partition)
+		return (0);
+	while (stack && stack->partition == partition)
 	{
 		size++;
 		stack = stack->next;
 	}
 	return (size);
+}
+
+t_stack	*stack_last(t_stack *stack)
+{
+	while (stack->next)
+		stack = stack->next;
+	return (stack);
 }
 
 int	empty(t_stack **stack)

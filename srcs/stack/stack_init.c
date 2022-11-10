@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 13:47:08 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/04 16:53:25 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/10 10:44:43 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,7 @@ static t_stack	*stack_new(const char *str)
 		free(stack);
 		return (0);
 	}
-	stack->begin_sorted = 0;
-	stack->partition = 0;
+	stack->partition = 1;
 	stack->next = 0;
 	return (stack);
 }

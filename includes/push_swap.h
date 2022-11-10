@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:32:57 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/04 19:12:24 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/10 11:17:23 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 typedef struct s_stack
 {
 	int				value;
-	int				begin_sorted;
 	int				partition;
 	struct s_stack	*next;
 }					t_stack;
@@ -57,6 +56,7 @@ void	sort_first_three(t_stack **stack);
 int		sorted(t_stack *stack);
 int		stack_size(t_stack *stack);
 int		stack_size_partition(t_stack *stack);
+t_stack	*stack_last(t_stack *stack);
 int		empty(t_stack **stack);
 int		stack_three_max(t_stack *stack);
 int		stack_three_min(t_stack *stack);

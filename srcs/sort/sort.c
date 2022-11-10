@@ -3,102 +3,70 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 10:58:47 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/04 19:24:28 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/10 12:06:32 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-static void	partition(t_stack **stack_a, t_stack **stack_b, int *first_pass)
+static void	twoway_partition2(t_stack **stack_a, int partition)
 {
-	int	median;
-	int	ra_count;
-	int	partition_size;
+	t_stack	*tmp;
 
-	median = get_median(*stack_a);
-	ra_count = 0;
-	partition_size = stack_size_partition(*stack_a) / 2;
-	while (*stack_a && !(*stack_a)->begin_sorted && ra_count <= partition_size)
-	{
-		if ((*stack_a)->value > median)
-		{
-			ra(stack_a);
-			ra_count++;
-		}
-		else
-			pb(stack_a, stack_b);
-	}
-	while (ra_count && !*first_pass)
+	tmp = stack_last(*stack_a);
+	while (tmp->partition != 3 && tmp->partition == (partition * 2) + 1)
 	{
 		rra(stack_a);
-		ra_count--;
+		tmp = stack_last(*stack_a);
 	}
-	*first_pass = 0;
-	(*stack_b)->partition = 1;
 }
 
-static void	partition_b_to_a(t_stack **stack_a, t_stack **stack_b)
+static void	twoway_partition(t_stack **stack_a, t_stack **stack_b)
 {
-	int	median;
-	int	rb_count;
-	int	partition_size;
+	int		median;
+	int		size;
+	int		to_push;
+	int		partition;
 
-	median = get_median(*stack_b);
-	rb_count = 0;
-	partition_size = stack_size_partition(*stack_b) / 2;
-	while (*stack_b && !(*stack_b)->partition && rb_count <= partition_size)
+	median = get_median(*stack_a);
+	size = stack_size_partition(*stack_a);
+	to_push = size / 2;
+	partition = (*stack_a)->partition;
+	while (to_push > 0)
 	{
-		if ((*stack_b)->value >= median)
-			pa(stack_a, stack_b);
+		if ((*stack_a)->value < median)
+		{
+			(*stack_a)->partition = partition * 2;
+			pb(stack_a, stack_b);
+			to_push--;
+		}
 		else
 		{
-			rb(stack_b);
-			rb_count++;
+			(*stack_a)->partition = (partition * 2) + 1;
+			ra(stack_a);
 		}
 	}
-	while (rb_count)
-	{
-		rrb(stack_b);
-		rb_count--;
-	}
+	twoway_partition2(stack_a, partition);
 }
 
 static void	push_next_partition(t_stack **stack_a, t_stack **stack_b)
 {
-	(*stack_b)->partition = 0;
-	if (stack_size_partition(*stack_b) <= 3)
-	{
-		while (*stack_b && !(*stack_b)->partition)
-			pa(stack_a, stack_b);
-	}
-	else
-		partition_b_to_a(stack_a, stack_b);
-}
+	int	partition;
 
-/*
-static void	push_next_partition(t_stack **stack_a, t_stack **stack_b)
-{
-	if (!empty(stack_b))
-	{
-		(*stack_b)->partition = 0;
-		while (*stack_b && !(*stack_b)->partition)
-			pa(stack_a, stack_b);
-	}
+	partition = (*stack_b)->partition;
+	while (*stack_b && (*stack_b)->partition == partition)
+		pa(stack_a, stack_b);
 }
-*/
 
 void	sort(t_stack **stack_a, t_stack **stack_b)
 {
-	int	first_pass;
-
-	first_pass = 1;
 	while (!sorted(*stack_a) || !empty(stack_b))
 	{
 		while (stack_size_partition(*stack_a) > 3)
-			partition(stack_a, stack_b, &first_pass);
+			twoway_partition(stack_a, stack_b);
 		if (!sorted(*stack_a) && stack_size_partition(*stack_a) > 1)
 		{
 			if (stack_size(*stack_a) <= 3)
@@ -106,7 +74,6 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 			else
 				sort_first_three(stack_a);
 		}
-		(*stack_a)->begin_sorted = 1;
 		if (!empty(stack_b))
 			push_next_partition(stack_a, stack_b);
 	}

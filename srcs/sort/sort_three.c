@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 17:09:54 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/04 17:37:10 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/10 10:55:54 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ void	sort_three(t_stack **stack)
 		else
 			rra(stack);
 	}
+	while (*stack)
+	{
+		(*stack)->partition = 0;
+		*stack = (*stack)->next;
+	}
 }
 
 void	sort_first_three(t_stack **stack)
@@ -55,5 +60,10 @@ void	sort_first_three(t_stack **stack)
 		rra(stack);
 		if (!sorted(*stack))
 			sa(stack);
+	}
+	while (*stack && (*stack)->partition)
+	{
+		(*stack)->partition = 0;
+		*stack = (*stack)->next;
 	}
 }

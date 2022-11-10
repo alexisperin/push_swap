@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_bis.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 18:33:22 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/08 19:16:13 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/10 11:00:58 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ static void	twoway_partition(t_stack **stack_a, t_stack **stack_b, int size)
 
 static void	threeway_partition(t_stack **stack_a, t_stack **stack_b, int size)
 {
-	
 }
 
 static int	init_sort(t_stack **stack_a, t_stack **stack_b)
