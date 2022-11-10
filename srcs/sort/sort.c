@@ -6,13 +6,13 @@
 /*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 10:58:47 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/10 17:01:25 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/10 17:19:16 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-static void	twoway_partition2(t_stack **stack_a, int partition, int pass)
+static void	twoway_partition2(t_stack **stack_a, int partition)
 {
 	t_stack	*tmp;
 
@@ -22,10 +22,6 @@ static void	twoway_partition2(t_stack **stack_a, int partition, int pass)
 		tmp->partition = partition * 2;
 		tmp = tmp->next;
 	}
-	printf("---Stack A---\n");
-	print_stack(*stack_a);
-	if (pass == 2)
-		exit(1);
 	tmp = stack_last(*stack_a);
 	if (!sorted(*stack_a) && !stack_only_one_partition(*stack_a))
 	{
@@ -37,7 +33,7 @@ static void	twoway_partition2(t_stack **stack_a, int partition, int pass)
 	}
 }
 
-static void	twoway_partition(t_stack **stack_a, t_stack **stack_b, int pass)
+static void	twoway_partition(t_stack **stack_a, t_stack **stack_b)
 {
 	int		median;
 	int		size;
@@ -62,7 +58,7 @@ static void	twoway_partition(t_stack **stack_a, t_stack **stack_b, int pass)
 			ra(stack_a);
 		}
 	}
-	twoway_partition2(stack_a, partition, pass);
+	twoway_partition2(stack_a, partition);
 }
 
 static void	push_next_partition(t_stack **stack_a, t_stack **stack_b)
@@ -76,14 +72,10 @@ static void	push_next_partition(t_stack **stack_a, t_stack **stack_b)
 
 void	sort(t_stack **stack_a, t_stack **stack_b)
 {
-	int pass = 1;
 	while (!sorted(*stack_a) || !empty(stack_b))
 	{
 		while (stack_size_partition(*stack_a) > 3)
-		{
-			twoway_partition(stack_a, stack_b, pass);
-			pass++;
-		}
+			twoway_partition(stack_a, stack_b);
 		if (!sorted(*stack_a) && stack_size_partition(*stack_a) > 1)
 		{
 			if (stack_size(*stack_a) <= 3)
@@ -91,6 +83,7 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 			else
 				sort_first_three(stack_a);
 		}
+		stack_set_sorted(*stack_a);
 		if (!empty(stack_b))
 			push_next_partition(stack_a, stack_b);
 	}
