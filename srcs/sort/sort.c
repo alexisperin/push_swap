@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 10:58:47 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/15 17:12:35 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/15 17:24:35 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ static void	push_next_partition2(t_stack **stack_a, t_stack **stack_b)
 	int		partition;
 
 	median = get_median(*stack_b);
-	// printf("median: %d\n", median);
 	to_push = size / 2 + size % 2;
 	partition = (*stack_b)->partition;
 	while (to_push > 0)
@@ -65,11 +64,6 @@ static void	push_next_partition(t_stack **stack_a, t_stack **stack_b)
 {
 	int	partition;
 
-	// printf("Before\n");
-	// printf("---Stack A---\n");
-	// print_stack(*stack_a);
-	// printf("---Stack B---\n");
-	// print_stack(*stack_b);
 	if (stack_size_partition(*stack_b) <= 3)
 	{
 		partition = (*stack_b)->partition;
@@ -78,11 +72,6 @@ static void	push_next_partition(t_stack **stack_a, t_stack **stack_b)
 	}
 	else
 		push_next_partition2(stack_a, stack_b);
-	// printf("After\n");
-	// printf("---Stack A---\n");
-	// print_stack(*stack_a);
-	// printf("---Stack B---\n");
-	// print_stack(*stack_b);
 }
 
 void	sort(t_stack **stack_a, t_stack **stack_b)
