@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aperin <aperin@student.s19.be>             +#+  +:+       +#+         #
+#    By: aperin <aperin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 11:30:34 by aperin            #+#    #+#              #
-#    Updated: 2022/11/10 18:44:26 by aperin           ###   ########.fr        #
+#    Updated: 2022/11/15 09:43:08 by aperin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,12 +22,13 @@ SRC_FILE	= main.c \
 				operations/rotate.c \
 				operations/reverse_rotate.c \
 				median/median.c \
+				partition/twoway_partition.c \
+				partition/threeway_partition.c \
 				sort/sort_three.c \
 				sort/sort_three_utils.c \
 				sort/sort_utils.c \
 				sort/sort_utils2.c \
 				sort/sort.c \
-				sort/threeway_partition_utils.c
 				
 SRCS_DIR	= srcs
 OBJSDIR		= objs

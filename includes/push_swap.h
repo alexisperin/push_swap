@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:32:57 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/10 18:43:51 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/15 09:44:05 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,6 @@ int		empty(t_stack **stack);
 int		stack_only_one_partition(t_stack *stack);
 void	stack_set_sorted(t_stack *stack_a);
 
-// Threeway partition utils
-void	push_low(t_stack **stack_a, t_stack **stack_b, int *to_push);
-void	push_high(t_stack **stack_a, t_stack **stack_b, int *to_push);
-
 // Sort three utils
 int		stack_three_max(t_stack *stack);
 int		stack_three_min(t_stack *stack);
@@ -75,6 +71,10 @@ int		stack_three_min(t_stack *stack);
 int		get_median(t_stack *stack);
 int		get_median_low(t_stack *stack);
 int		get_median_high(t_stack *stack);
+
+// Partition
+void	twoway_partition(t_stack **stack_a, t_stack **stack_b, int size);
+void	threeway_partition(t_stack **stack_a, t_stack **stack_b, int size);
 
 // Error
 int		print_error(void);
