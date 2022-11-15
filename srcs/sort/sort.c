@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 10:58:47 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/15 17:24:35 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/15 18:32:44 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,12 @@ static void	twoway_partition2(t_stack **stack_b, int partition)
 
 static void	push_next_partition2(t_stack **stack_a, t_stack **stack_b)
 {
-	int		size = stack_size_partition(*stack_b);
+	int		size;
 	int		median;
 	int		to_push;
 	int		partition;
 
+	size = stack_size_partition(*stack_b);
 	median = get_median(*stack_b);
 	to_push = size / 2 + size % 2;
 	partition = (*stack_b)->partition;
