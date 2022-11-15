@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 13:54:33 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/10 17:55:55 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/15 09:01:53 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,8 @@ int	get_median_low(t_stack *stack)
 	{
 		lower = nb_lower(stack, tmp->value, partition);
 		higher = nb_higher(stack, tmp->value, partition);
-		if (lower * 2 == higher) // Add condition !!
+		if (lower * 2 == higher || lower * 2 == higher + 1
+			|| lower * 2 == higher + 2)
 			break ;
 		tmp = tmp->next;
 	}
@@ -99,7 +100,8 @@ int	get_median_high(t_stack *stack)
 	{
 		lower = nb_lower(stack, tmp->value, partition);
 		higher = nb_higher(stack, tmp->value, partition);
-		if (lower == higher * 2) // Add condition !!
+		if (lower == higher * 2 || lower + 1 == higher * 2
+			|| lower + 2 == higher * 2)
 			break ;
 		tmp = tmp->next;
 	}

@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 10:58:47 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/10 18:47:21 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/15 09:03:34 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,19 @@ static void	twoway_partition(t_stack **stack_a, t_stack **stack_b, int size)
 	twoway_partition2(stack_a, partition);
 }
 
-static void	threeway_partition(t_stack **stack_a, t_stack **stack_b, int size)
+static void	threeway_partition2(t_stack **stack_a, int partition)
+{
+	t_stack	*tmp;
+
+	tmp = *stack_a;
+	while (tmp && tmp->partition == partition)
+	{
+		tmp->partition = partition * 3;
+		tmp = tmp->next;
+	}
+}
+
+void	threeway_partition(t_stack **stack_a, t_stack **stack_b, int size)
 {
 	int		median_low;
 	int		median_high;
@@ -68,13 +80,13 @@ static void	threeway_partition(t_stack **stack_a, t_stack **stack_b, int size)
 
 	median_low = get_median_low(*stack_a);
 	median_high = get_median_high(*stack_a);
-	to_push = (size / 3) * 2; // ???????
+	to_push = (size / 3) * 2;
 	partition = (*stack_a)->partition;
 	while (to_push > 0)
 	{
 		if ((*stack_a)->value < median_low)
 			push_low(stack_a, stack_b, &to_push);
-		else if ((*stack_a)->value < median_high)
+		else if ((*stack_a)->value <= median_high)
 			push_high(stack_a, stack_b, &to_push);
 		else
 		{

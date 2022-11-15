@@ -6,11 +6,13 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:33:48 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/10 18:24:11 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/15 09:03:50 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+void	threeway_partition(t_stack **stack_a, t_stack **stack_b, int size);
 
 void	print_stack(t_stack *stack)
 {
@@ -32,11 +34,14 @@ int	main(int ac, char **av)
 	if (!stack_a)
 		return (print_error());
 	stack_b = 0;
-	sort(&stack_a, &stack_b);
-	if (sorted(stack_a))
-		printf("SORTED\n");
-	else
-		printf("NOT SORTED\n");
+	printf("median low: %d\n", get_median_low(stack_a));
+	printf("median high: %d\n", get_median_high(stack_a));
+	threeway_partition(&stack_a, &stack_b, stack_size(stack_a));
+	// sort(&stack_a, &stack_b);
+	// if (sorted(stack_a))
+	// 	printf("SORTED\n");
+	// else
+	// 	printf("NOT SORTED\n");
 	printf("---Stack A---\n");
 	print_stack(stack_a);
 	printf("---Stack B---\n");
