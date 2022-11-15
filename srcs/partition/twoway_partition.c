@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 09:39:10 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/15 09:43:54 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/15 16:07:01 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	twoway_partition2(t_stack **stack_a, int partition)
 	tmp = *stack_a;
 	while (tmp && tmp->partition == partition)
 	{
-		tmp->partition = partition * 2;
+		tmp->partition = (partition * 3) + 2;
 		tmp = tmp->next;
 	}
 	tmp = stack_last(*stack_a);
@@ -46,13 +46,13 @@ void	twoway_partition(t_stack **stack_a, t_stack **stack_b, int size)
 	{
 		if ((*stack_a)->value < median)
 		{
-			(*stack_a)->partition = (partition * 2) + 1;
+			(*stack_a)->partition = (partition * 3);
 			pb(stack_a, stack_b);
 			to_push--;
 		}
 		else
 		{
-			(*stack_a)->partition = partition * 2;
+			(*stack_a)->partition = (partition * 3) + 2;
 			ra(stack_a);
 		}
 	}
