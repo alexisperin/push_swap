@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 10:58:47 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/15 18:32:44 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/15 18:58:16 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,15 +63,17 @@ static void	push_next_partition2(t_stack **stack_a, t_stack **stack_b)
 
 static void	push_next_partition(t_stack **stack_a, t_stack **stack_b)
 {
+	int	partition_size;
 	int	partition;
 
-	if (stack_size_partition(*stack_b) <= 3)
+	partition_size = stack_size_partition(*stack_b);
+	if (partition_size <= 3)
 	{
 		partition = (*stack_b)->partition;
 		while (*stack_b && (*stack_b)->partition == partition)
 			pa(stack_a, stack_b);
 	}
-	else
+	else if (partition_size <= 6)
 		push_next_partition2(stack_a, stack_b);
 }
 
