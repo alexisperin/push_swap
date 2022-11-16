@@ -6,7 +6,7 @@
 #    By: aperin <aperin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 11:30:34 by aperin            #+#    #+#              #
-#    Updated: 2022/11/15 09:43:08 by aperin           ###   ########.fr        #
+#    Updated: 2022/11/16 11:30:02 by aperin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,11 @@ SRC_FILE	= main.c \
 				operations/rotate.c \
 				operations/reverse_rotate.c \
 				median/median.c \
+				median/median_utils.c \
 				partition/twoway_partition.c \
 				partition/threeway_partition.c \
+				partition/push_threeway_partition.c \
+				partition/push_twoway_partition.c \
 				sort/sort_three.c \
 				sort/sort_three_utils.c \
 				sort/sort_utils.c \

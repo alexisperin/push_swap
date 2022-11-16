@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:32:57 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/15 14:02:57 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/16 11:33:19 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,12 +69,19 @@ int		stack_three_min(t_stack *stack);
 
 // Median
 int		get_median(t_stack *stack);
+int		get_median_bis(t_stack *stack);
 int		get_median_low(t_stack *stack);
 int		get_median_high(t_stack *stack);
+
+//Median utils
+int		nb_lower(t_stack *stack, int val, int partition);
+int		nb_higher(t_stack *stack, int val, int partition);
 
 // Partition
 void	twoway_partition(t_stack **stack_a, t_stack **stack_b, int size);
 void	threeway_partition(t_stack **stack_a, t_stack **stack_b, int size);
+void	push_twoway_partition(t_stack **stack_a, t_stack **stack_b);
+void	push_threeway_partition(t_stack **stack_a, t_stack **stack_b);
 
 // Error
 int		print_error(void);

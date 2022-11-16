@@ -22,7 +22,7 @@ then
 fi
 while [ $i -le $1 ]
 do
-	ARG=`ruby -e "puts (0..$2).to_a.shuffle.join(' ')"`
+	ARG=`ruby -e "puts (0..$2 - 1).to_a.shuffle.join(' ')"`
 	NB=$(( `./push_swap $ARG | wc -l` ))
 
 	if [ -e "$FILE" ]
