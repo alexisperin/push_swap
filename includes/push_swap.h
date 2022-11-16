@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:32:57 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/16 11:33:19 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/16 13:22:55 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	sort_first_three(t_stack **stack);
 
 // Sort utils
 int		sorted(t_stack *stack);
+int		sorted_partition(t_stack *stack);
 int		stack_size(t_stack *stack);
 int		stack_size_partition(t_stack *stack);
 t_stack	*stack_last(t_stack *stack);

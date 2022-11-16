@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 11:06:24 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/16 12:21:38 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/16 15:41:50 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,6 @@ static void	push_threeway_part2(t_stack **stack_a, t_stack **stack_b, int part)
 {
 	t_stack	*tmp;
 
-	printf("---Stack A---\n");
-	print_stack(*stack_a);
-	printf("---Stack B---\n");
-	print_stack(*stack_b);
 	tmp = *stack_b;
 	while (tmp && tmp->partition == part)
 	{
@@ -68,7 +64,19 @@ static void	push_threeway_part2(t_stack **stack_a, t_stack **stack_b, int part)
 			tmp = stack_last(*stack_b);
 		}
 	}
-	sort_first_three(stack_a);
+	// printf("---Stack A---2\n");
+	// print_stack(*stack_a);
+	// printf("---Stack B---\n");
+	// print_stack(*stack_b);
+	if (!sorted_partition(*stack_a))
+	{
+		// printf("SORTING !!!!!!!!!!!!!!!!!!!!!\n");
+		sort_first_three(stack_a);
+	}
+	// printf("---Stack A---3\n");
+	// print_stack(*stack_a);
+	// printf("---Stack B---\n");
+	// print_stack(*stack_b);
 	stack_set_sorted(*stack_a);
 	tmp = stack_last(*stack_a);
 	while (tmp && tmp->partition == (part * 3) + 1)
@@ -76,10 +84,6 @@ static void	push_threeway_part2(t_stack **stack_a, t_stack **stack_b, int part)
 		rra(stack_a);
 		tmp = stack_last(*stack_a);
 	}
-	printf("---Stack A---\n");
-	print_stack(*stack_a);
-	printf("---Stack B---\n");
-	print_stack(*stack_b);
 }
 
 void	push_threeway_partition(t_stack **stack_a, t_stack **stack_b)
@@ -95,12 +99,12 @@ void	push_threeway_partition(t_stack **stack_a, t_stack **stack_b)
 	size = stack_size_partition(*stack_b);
 	to_push = 3 + ((size - 3) / 2) + (size - 3) % 2;
 	partition = (*stack_b)->partition;
-	printf("median bis: %d\n", median);
-	printf("3 max: %d\n", third_max);
-	printf("---Stack A---\n");
-	print_stack(*stack_a);
-	printf("---Stack B---\n");
-	print_stack(*stack_b);
+	// printf("median bis: %d\n", median);
+	// printf("3 max: %d\n", third_max);
+	// printf("---Stack A---1\n");
+	// print_stack(*stack_a);
+	// printf("---Stack B---\n");
+	// print_stack(*stack_b);
 	while (to_push > 0)
 	{
 		if ((*stack_b)->value >= third_max)

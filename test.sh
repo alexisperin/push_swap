@@ -8,23 +8,29 @@ FILE=checker
 FILEBASIC=checker_Mac
 PROJECT=push_swap
 
-if [ $# -le 1 ] || ! test -f "$PROJECT"
+if [ $# -le 1 ]
 then
 	if [ $# -le 1 ]
 	then
 		echo "Not enough arguments : Number of test, number of values."
 	fi
+	exit
+fi
+if ! test -f "$PROJECT"
+then
+	make
 	if ! test -f "$PROJECT"
 	then
-		echo "File Push_Swap does not exists."
+		echo -e "I can't compile your Makefile"
+		exit
 	fi
-	exit
 fi
 while [ $i -le $1 ]
 do
-	ARG=`ruby -e "puts (0..$2 - 1).to_a.shuffle.join(' ')"`
+	ARG=`ruby -e "puts (0..$2-1).to_a.shuffle.join(' ')"`
 	NB=$(( `./push_swap $ARG | wc -l` ))
 
+	make bonus
 	if [ -e "$FILE" ]
 	then
 		res=`./push_swap $ARG | ./$FILE $ARG`

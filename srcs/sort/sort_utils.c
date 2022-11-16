@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 11:44:50 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/10 11:58:18 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/16 15:34:19 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,20 @@
 int	sorted(t_stack *stack)
 {
 	while (stack->next)
+	{
+		if (stack->value > stack->next->value)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
+}
+
+int	sorted_partition(t_stack *stack)
+{
+	int	partition;
+
+	partition = stack->partition;
+	while (stack->next && stack->next->partition == partition)
 	{
 		if (stack->value > stack->next->value)
 			return (0);
@@ -58,11 +72,4 @@ t_stack	*stack_last(t_stack *stack)
 	while (stack->next)
 		stack = stack->next;
 	return (stack);
-}
-
-int	empty(t_stack **stack)
-{
-	if (!stack || !*stack)
-		return (1);
-	return (0);
 }

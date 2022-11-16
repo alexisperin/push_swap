@@ -1,0 +1,834 @@
+pb
+pb
+pb
+pb
+pb
+pb
+rb
+ra
+ra
+ra
+ra
+pb
+pb
+rb
+pb
+ra
+pb
+rb
+ra
+pb
+rb
+pb
+rb
+pb
+ra
+ra
+pb
+rb
+pb
+rb
+pb
+rb
+pb
+rb
+pb
+rb
+pb
+ra
+ra
+ra
+ra
+pb
+pb
+rb
+ra
+pb
+rb
+ra
+pb
+pb
+rb
+pb
+ra
+pb
+pb
+pb
+rb
+pb
+rb
+ra
+pb
+pb
+pb
+rb
+pb
+rb
+pb
+rb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+pb
+rb
+pb
+rb
+pb
+pb
+rb
+ra
+pb
+rb
+pb
+pb
+rb
+ra
+ra
+pb
+pb
+pb
+pb
+rb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+ra
+pb
+ra
+pb
+pa
+pa
+sa
+rb
+pa
+rb
+pa
+pa
+rrb
+rrb
+ra
+sa
+rra
+sa
+pa
+pa
+pa
+sa
+pa
+pa
+rb
+pa
+rrb
+sa
+pa
+pa
+sa
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+rb
+pa
+pa
+ra
+pa
+pa
+ra
+rb
+rb
+rb
+rb
+rb
+pa
+ra
+pa
+ra
+rb
+pa
+ra
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+ra
+sa
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+pb
+rb
+pb
+rb
+pb
+pb
+rb
+pb
+rb
+pb
+rrb
+rrb
+rrb
+rrb
+sa
+pa
+rb
+rb
+pa
+rrb
+rrb
+sa
+pa
+pa
+sa
+pa
+pa
+pa
+ra
+pa
+ra
+rb
+pa
+pa
+pa
+rrb
+sa
+ra
+sa
+rra
+rra
+rra
+pa
+pa
+sa
+median bis: 24
+3 max: 32
+---Stack A---1
+35, part: 0
+36, part: 0
+37, part: 0
+38, part: 0
+39, part: 0
+40, part: 0
+41, part: 0
+42, part: 0
+43, part: 0
+44, part: 0
+45, part: 0
+46, part: 0
+47, part: 0
+48, part: 0
+49, part: 0
+50, part: 0
+---Stack B---
+33, part: 4
+28, part: 4
+26, part: 4
+24, part: 4
+19, part: 4
+34, part: 4
+27, part: 4
+32, part: 4
+29, part: 4
+20, part: 4
+17, part: 4
+22, part: 4
+21, part: 4
+23, part: 4
+25, part: 4
+31, part: 4
+18, part: 4
+30, part: 4
+3, part: 3
+7, part: 3
+15, part: 3
+10, part: 3
+11, part: 3
+2, part: 3
+13, part: 3
+12, part: 3
+9, part: 3
+6, part: 3
+4, part: 3
+14, part: 3
+1, part: 3
+16, part: 3
+8, part: 3
+5, part: 3
+---Stack A---2
+32, part: 14
+34, part: 14
+33, part: 14
+35, part: 0
+36, part: 0
+37, part: 0
+38, part: 0
+39, part: 0
+40, part: 0
+41, part: 0
+42, part: 0
+43, part: 0
+44, part: 0
+45, part: 0
+46, part: 0
+47, part: 0
+48, part: 0
+49, part: 0
+50, part: 0
+28, part: 13
+26, part: 13
+24, part: 13
+27, part: 13
+29, part: 13
+25, part: 13
+31, part: 13
+30, part: 13
+---Stack B---
+19, part: 12
+20, part: 12
+17, part: 12
+22, part: 12
+21, part: 12
+23, part: 12
+18, part: 12
+3, part: 3
+7, part: 3
+15, part: 3
+10, part: 3
+11, part: 3
+2, part: 3
+13, part: 3
+12, part: 3
+9, part: 3
+6, part: 3
+4, part: 3
+14, part: 3
+1, part: 3
+16, part: 3
+8, part: 3
+5, part: 3
+SORTING !!!!!!!!!!!!!!!!!!!!!
+---Stack A---3
+32, part: 14
+33, part: 14
+34, part: 14
+35, part: 0
+36, part: 0
+37, part: 0
+38, part: 0
+39, part: 0
+40, part: 0
+41, part: 0
+42, part: 0
+43, part: 0
+44, part: 0
+45, part: 0
+46, part: 0
+47, part: 0
+48, part: 0
+49, part: 0
+50, part: 0
+28, part: 13
+26, part: 13
+24, part: 13
+27, part: 13
+29, part: 13
+25, part: 13
+31, part: 13
+30, part: 13
+---Stack B---
+19, part: 12
+20, part: 12
+17, part: 12
+22, part: 12
+21, part: 12
+23, part: 12
+18, part: 12
+3, part: 3
+7, part: 3
+15, part: 3
+10, part: 3
+11, part: 3
+2, part: 3
+13, part: 3
+12, part: 3
+9, part: 3
+6, part: 3
+4, part: 3
+14, part: 3
+1, part: 3
+16, part: 3
+8, part: 3
+5, part: 3
+median bis: 19
+3 max: 21
+---Stack A---1
+24, part: 0
+25, part: 0
+26, part: 0
+27, part: 0
+28, part: 0
+29, part: 0
+30, part: 0
+31, part: 0
+32, part: 0
+33, part: 0
+34, part: 0
+35, part: 0
+36, part: 0
+37, part: 0
+38, part: 0
+39, part: 0
+40, part: 0
+41, part: 0
+42, part: 0
+43, part: 0
+44, part: 0
+45, part: 0
+46, part: 0
+47, part: 0
+48, part: 0
+49, part: 0
+50, part: 0
+---Stack B---
+19, part: 12
+20, part: 12
+17, part: 12
+22, part: 12
+21, part: 12
+23, part: 12
+18, part: 12
+3, part: 3
+7, part: 3
+15, part: 3
+10, part: 3
+11, part: 3
+2, part: 3
+13, part: 3
+12, part: 3
+9, part: 3
+6, part: 3
+4, part: 3
+14, part: 3
+1, part: 3
+16, part: 3
+8, part: 3
+5, part: 3
+---Stack A---2
+23, part: 38
+21, part: 38
+22, part: 38
+24, part: 0
+25, part: 0
+26, part: 0
+27, part: 0
+28, part: 0
+29, part: 0
+30, part: 0
+31, part: 0
+32, part: 0
+33, part: 0
+34, part: 0
+35, part: 0
+36, part: 0
+37, part: 0
+38, part: 0
+39, part: 0
+40, part: 0
+41, part: 0
+42, part: 0
+43, part: 0
+44, part: 0
+45, part: 0
+46, part: 0
+47, part: 0
+48, part: 0
+49, part: 0
+50, part: 0
+19, part: 37
+20, part: 37
+---Stack B---
+17, part: 36
+18, part: 36
+3, part: 3
+7, part: 3
+15, part: 3
+10, part: 3
+11, part: 3
+2, part: 3
+13, part: 3
+12, part: 3
+9, part: 3
+6, part: 3
+4, part: 3
+14, part: 3
+1, part: 3
+16, part: 3
+8, part: 3
+5, part: 3
+SORTING !!!!!!!!!!!!!!!!!!!!!
+---Stack A---3
+21, part: 38
+22, part: 38
+23, part: 38
+24, part: 0
+25, part: 0
+26, part: 0
+27, part: 0
+28, part: 0
+29, part: 0
+30, part: 0
+31, part: 0
+32, part: 0
+33, part: 0
+34, part: 0
+35, part: 0
+36, part: 0
+37, part: 0
+38, part: 0
+39, part: 0
+40, part: 0
+41, part: 0
+42, part: 0
+43, part: 0
+44, part: 0
+45, part: 0
+46, part: 0
+47, part: 0
+48, part: 0
+49, part: 0
+50, part: 0
+19, part: 37
+20, part: 37
+---Stack B---
+17, part: 36
+18, part: 36
+3, part: 3
+7, part: 3
+15, part: 3
+10, part: 3
+11, part: 3
+2, part: 3
+13, part: 3
+12, part: 3
+9, part: 3
+6, part: 3
+4, part: 3
+14, part: 3
+1, part: 3
+16, part: 3
+8, part: 3
+5, part: 3
+median bis: 7
+3 max: 14
+---Stack A---1
+17, part: 0
+18, part: 0
+19, part: 0
+20, part: 0
+21, part: 0
+22, part: 0
+23, part: 0
+24, part: 0
+25, part: 0
+26, part: 0
+27, part: 0
+28, part: 0
+29, part: 0
+30, part: 0
+31rb
+pa
+ra
+pa
+pa
+ra
+pa
+ra
+rb
+pa
+ra
+pa
+ra
+pa
+ra
+rb
+rb
+pa
+rb
+pa
+pa
+ra
+sa
+ra
+sa
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+pb
+pb
+rb
+pb
+rb
+ra
+ra
+pb
+rb
+pb
+rrb
+rrb
+rrb
+rra
+rra
+sa
+pa
+pa
+pa
+ra
+sa
+rra
+pa
+pa
+pa
+rb
+rb
+pa
+pa
+ra
+sa
+rra
+pa
+pa
+pa
+ra
+sa
+rra
+sa
+, part: 0
+32, part: 0
+33, part: 0
+34, part: 0
+35, part: 0
+36, part: 0
+37, part: 0
+38, part: 0
+39, part: 0
+40, part: 0
+41, part: 0
+42, part: 0
+43, part: 0
+44, part: 0
+45, part: 0
+46, part: 0
+47, part: 0
+48, part: 0
+49, part: 0
+50, part: 0
+---Stack B---
+3, part: 3
+7, part: 3
+15, part: 3
+10, part: 3
+11, part: 3
+2, part: 3
+13, part: 3
+12, part: 3
+9, part: 3
+6, part: 3
+4, part: 3
+14, part: 3
+1, part: 3
+16, part: 3
+8, part: 3
+5, part: 3
+---Stack A---2
+16, part: 11
+14, part: 11
+15, part: 11
+17, part: 0
+18, part: 0
+19, part: 0
+20, part: 0
+21, part: 0
+22, part: 0
+23, part: 0
+24, part: 0
+25, part: 0
+26, part: 0
+27, part: 0
+28, part: 0
+29, part: 0
+30, part: 0
+31, part: 0
+32, part: 0
+33, part: 0
+34, part: 0
+35, part: 0
+36, part: 0
+37, part: 0
+38, part: 0
+39, part: 0
+40, part: 0
+41, part: 0
+42, part: 0
+43, part: 0
+44, part: 0
+45, part: 0
+46, part: 0
+47, part: 0
+48, part: 0
+49, part: 0
+50, part: 0
+7, part: 10
+10, part: 10
+11, part: 10
+13, part: 10
+12, part: 10
+9, part: 10
+8, part: 10
+---Stack B---
+5, part: 9
+3, part: 9
+2, part: 9
+6, part: 9
+4, part: 9
+1, part: 9
+SORTING !!!!!!!!!!!!!!!!!!!!!
+---Stack A---3
+14, part: 11
+15, part: 11
+16, part: 11
+17, part: 0
+18, part: 0
+19, part: 0
+20, part: 0
+21, part: 0
+22, part: 0
+23, part: 0
+24, part: 0
+25, part: 0
+26, part: 0
+27, part: 0
+28, part: 0
+29, part: 0
+30, part: 0
+31, part: 0
+32, part: 0
+33, part: 0
+34, part: 0
+35, part: 0
+36, part: 0
+37, part: 0
+38, part: 0
+39, part: 0
+40, part: 0
+41, part: 0
+42, part: 0
+43, part: 0
+44, part: 0
+45, part: 0
+46, part: 0
+47, part: 0
+48, part: 0
+49, part: 0
+50, part: 0
+7, part: 10
+10, part: 10
+11, part: 10
+13, part: 10
+12, part: 10
+9, part: 10
+8, part: 10
+---Stack B---
+5, part: 9
+3, part: 9
+2, part: 9
+6, part: 9
+4, part: 9
+1, part: 9
+SORTED
+---Stack A---
+1, part: 0
+2, part: 0
+3, part: 0
+4, part: 0
+5, part: 0
+6, part: 0
+7, part: 0
+8, part: 0
+9, part: 0
+10, part: 0
+11, part: 0
+12, part: 0
+13, part: 0
+14, part: 0
+15, part: 0
+16, part: 0
+17, part: 0
+18, part: 0
+19, part: 0
+20, part: 0
+21, part: 0
+22, part: 0
+23, part: 0
+24, part: 0
+25, part: 0
+26, part: 0
+27, part: 0
+28, part: 0
+29, part: 0
+30, part: 0
+31, part: 0
+32, part: 0
+33, part: 0
+34, part: 0
+35, part: 0
+36, part: 0
+37, part: 0
+38, part: 0
+39, part: 0
+40, part: 0
+41, part: 0
+42, part: 0
+43, part: 0
+44, part: 0
+45, part: 0
+46, part: 0
+47, part: 0
+48, part: 0
+49, part: 0
+50, part: 0
+---Stack B---
