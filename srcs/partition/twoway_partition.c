@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 09:39:10 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/15 16:07:01 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/17 13:55:25 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	twoway_partition2(t_stack **stack_a, int partition)
 	tmp = stack_last(*stack_a);
 	if (!sorted(*stack_a) && !stack_only_one_partition(*stack_a))
 	{
-		while (tmp->partition)
+		while (tmp->partition == (partition * 3) + 2)
 		{
 			rra(stack_a);
 			tmp = stack_last(*stack_a);
