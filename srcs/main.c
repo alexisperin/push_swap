@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:33:48 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/16 16:58:46 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/17 12:06:10 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ int	main(int ac, char **av)
 		return (print_error());
 	stack_b = 0;
 	sort(&stack_a, &stack_b);
-	// if (sorted(stack_a))
-	// 	printf("SORTED\n");
-	// else
-	// 	printf("NOT SORTED\n");
-	// printf("---Stack A---\n");
-	// print_stack(stack_a);
-	// printf("---Stack B---\n");
+	if (sorted(stack_a))
+		printf("SORTED\n");
+	else
+		printf("NOT SORTED\n");
+	printf("---Stack A---\n");
+	print_stack(stack_a);
+	printf("---Stack B---\n");
 	print_stack(stack_b);
 	free_stack(stack_a);
 	free_stack(stack_b);

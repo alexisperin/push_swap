@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 10:58:47 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/16 15:35:40 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/17 12:06:04 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,20 @@
 
 static void	push_next_partition(t_stack **stack_a, t_stack **stack_b)
 {
-	int	partition;
+	t_stack	*tmp;
+	int		partition;
 
-	if (stack_size_partition(*stack_b) <= 3)
+	tmp = stack_last(*stack_a);
+	if (tmp->partition > (*stack_b)->partition)
+	{
+		partition = tmp->partition;
+		while (tmp->partition == partition)
+		{
+			rra(stack_a);
+			tmp = stack_last(*stack_a);
+		}
+	}
+	else if (stack_size_partition(*stack_b) <= 3)
 	{
 		partition = (*stack_b)->partition;
 		while (*stack_b && (*stack_b)->partition == partition)
@@ -50,6 +61,10 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 				sort_first_three(stack_a);
 		}
 		stack_set_sorted(*stack_a);
+		printf("---Stack A---0\n");
+		print_stack(*stack_a);
+		printf("---Stack B---\n");
+		print_stack(*stack_b);
 		if (!empty(stack_b))
 			push_next_partition(stack_a, stack_b);
 	}

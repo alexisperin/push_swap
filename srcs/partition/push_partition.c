@@ -3,14 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   push_partition.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 09:43:28 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/17 09:48:12 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/17 11:47:21 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+static void	push_high(t_stack **stack_a, t_stack **stack_b, int *to_push)
+{
+	(*stack_b)->partition *= 3;
+	(*stack_b)->partition += 2;
+	pa(stack_a, stack_b);
+	(*to_push)--;
+}
 
 static void	push_low(t_stack **stack_a, t_stack **stack_b, int *to_push)
 {
@@ -18,14 +26,6 @@ static void	push_low(t_stack **stack_a, t_stack **stack_b, int *to_push)
 	(*stack_b)->partition += 1;
 	pa(stack_a, stack_b);
 	ra(stack_a);
-	(*to_push)--;
-}
-
-static void	push_high(t_stack **stack_a, t_stack **stack_b, int *to_push)
-{
-	(*stack_b)->partition *= 3;
-	(*stack_b)->partition += 2;
-	pa(stack_a, stack_b);
 	(*to_push)--;
 }
 
@@ -48,15 +48,10 @@ static void	push_threeway_part2(t_stack **stack_a, t_stack **stack_b, int part)
 			tmp = stack_last(*stack_b);
 		}
 	}
-	if (!sorted_partition(*stack_a))
-		sort_first_three(stack_a);
-	stack_set_sorted(*stack_a);
-	tmp = stack_last(*stack_a);
-	while (tmp && tmp->partition == (part * 3) + 1)
-	{
-		rra(stack_a);
-		tmp = stack_last(*stack_a);
-	}
+	printf("---Stack A---2\n");
+	print_stack(*stack_a);
+	printf("---Stack B---\n");
+	print_stack(*stack_b);
 }
 
 void	push_threeway_partition(t_stack **stack_a, t_stack **stack_b)
@@ -70,14 +65,21 @@ void	push_threeway_partition(t_stack **stack_a, t_stack **stack_b)
 	median_low = get_median_low(*stack_b);
 	median_high = get_median_high(*stack_b);
 	size = stack_size_partition(*stack_b);
-	to_push = ((size / 3) * 2) + size % 3;
+	to_push = ((size / 3) * 2) + (size % 3);
 	partition = (*stack_b)->partition;
+	printf("median low: %d\n", median_low);
+	printf("median high: %d\n", median_high);
+	printf("to push: %d\n", to_push);
+	printf("---Stack B---1\n");
+	print_stack(*stack_b);
+	printf("---Stack A---1\n");
+	print_stack(*stack_a);
 	while (to_push > 0)
 	{
-		if ((*stack_b)->value >= median_high)
-			push_high(stack_b, stack_b, &to_push);
+		if ((*stack_b)->value > median_high)
+			push_high(stack_a, stack_b, &to_push);
 		else if ((*stack_b)->value >= median_low)
-			push_low(stack_b, stack_b, &to_push);
+			push_low(stack_a, stack_b, &to_push);
 		else
 		{
 			(*stack_b)->partition = partition * 3;
@@ -86,8 +88,3 @@ void	push_threeway_partition(t_stack **stack_a, t_stack **stack_b)
 	}
 	push_threeway_part2(stack_a, stack_b, partition);
 }
-
-// void	push_threeway_partition(t_stack **stack_a, t_stack **stack_b)
-// {
-// 	push_twoway_partition(stack_a, stack_b);
-// }
