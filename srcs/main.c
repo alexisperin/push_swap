@@ -6,13 +6,13 @@
 /*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:33:48 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/18 16:21:39 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/18 16:53:03 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	print_stack(t_stack *stack)
+void print_stack(t_stack *stack)
 {
 	while (stack)
 	{

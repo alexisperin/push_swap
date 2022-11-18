@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:32:57 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/18 12:17:03 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/18 16:56:36 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
-void	print_stack(t_stack *stack); // TO REMOVE !!!
+void print_stack(t_stack *stack); // TO REMOVE !!!
 
 // Stack init and free
 t_stack	*init_stack(int ac, char **av);
@@ -54,13 +54,18 @@ void	sort(t_stack **stack_a, t_stack **stack_b);
 void	sort_three(t_stack **stack);
 void	sort_first_three(t_stack **stack);
 
-// Sort bis
+// Partition
 void	partition_a(t_stack **stack_a, t_stack **stack_b);
 void	partition_a_end(t_stack **stack_a, t_stack **stack_b);
 void	partition_b(t_stack **stack_a, t_stack **stack_b);
 void	partition_b_end(t_stack **stack_a, t_stack **stack_b);
 
-// Sort utils
+// Median
+int		get_median(t_stack *stack);
+int		get_median_low(t_stack *stack);
+int		get_median_high(t_stack *stack);
+
+// Stack utils
 int		sorted(t_stack *stack);
 int		sorted_partition(t_stack *stack);
 int		stack_size(t_stack *stack);
@@ -69,25 +74,6 @@ t_stack	*stack_last(t_stack *stack);
 int		empty(t_stack **stack);
 int		stack_only_one_partition(t_stack *stack);
 void	stack_set_sorted(t_stack *stack_a);
-
-// Sort three utils
-int		stack_three_max(t_stack *stack);
-int		stack_three_min(t_stack *stack);
-
-// Median
-int		get_median(t_stack *stack);
-int		get_median_low(t_stack *stack);
-int		get_median_high(t_stack *stack);
-
-//Median utils
-int		nb_lower(t_stack *stack, int val, int partition);
-int		nb_higher(t_stack *stack, int val, int partition);
-
-// Partition
-// void	twoway_partition(t_stack **stack_a, t_stack **stack_b, int size);
-// void	threeway_partition(t_stack **stack_a, t_stack **stack_b, int size);
-// void	push_twoway_partition(t_stack **stack_a, t_stack **stack_b);
-// void	push_threeway_partition(t_stack **stack_a, t_stack **stack_b);
 
 // Error
 int		print_error(void);
