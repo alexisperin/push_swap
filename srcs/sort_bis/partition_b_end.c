@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 11:40:46 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/18 16:20:38 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/18 16:32:36 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,11 +101,13 @@ void	partition_b_end(t_stack **stack_a, t_stack **stack_b)
 		tmp = tmp->next;
 	size = stack_size_partition(tmp);
 	if (size <= 3)
+	{
 		while (!empty(stack_b) && stack_last(*stack_b)->partition == partition)
 		{
 			rrb(stack_b);
 			pa(stack_a, stack_b);
 		}
+	}
 	else if (size <= 6)
 		twoway_partition(stack_a, stack_b, tmp, size);
 	else

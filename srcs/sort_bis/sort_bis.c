@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:46:21 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/18 16:21:34 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/18 16:31:11 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,10 @@ static int	locate_partition(t_stack **stack_a, t_stack **stack_b)
 void	sort(t_stack **stack_a, t_stack **stack_b)
 {
 	int	partition_location;
-	// int pass = 1;
 
 	while (!sorted(*stack_a) || !empty(stack_b))
 	{
-		// printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!! PASS: %d\n", pass);
-		// pass++;
 		partition_location = locate_partition(stack_a, stack_b);
-		// printf("!!!!!!!!! location: %d\n", partition_location);
-		// printf("---Stack A---1\n");
-		// print_stack(*stack_a);
-		// printf("---Stack B---1\n");
-		// print_stack(*stack_b);
 		if (partition_location == 1)
 			partition_a(stack_a, stack_b);
 		else if (partition_location == 2)
@@ -61,10 +53,6 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 			partition_b(stack_a, stack_b);
 		else if (partition_location == 4)
 			partition_b_end(stack_a, stack_b);
-		// printf("---Stack A---2\n");
-		// print_stack(*stack_a);
-		// printf("---Stack B---2\n");
-		// print_stack(*stack_b);
 		if (stack_size_partition(*stack_a) <= 3 && !sorted_partition(*stack_a))
 		{
 			if (stack_size(*stack_a) <= 3)
@@ -74,6 +62,5 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 		}
 		if (sorted_partition(*stack_a))
 			stack_set_sorted(*stack_a);
-
 	}
 }
