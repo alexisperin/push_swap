@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:32:57 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/16 13:22:55 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/18 09:50:20 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ int		stack_three_min(t_stack *stack);
 
 // Median
 int		get_median(t_stack *stack);
-int		get_median_bis(t_stack *stack);
 int		get_median_low(t_stack *stack);
 int		get_median_high(t_stack *stack);
 
