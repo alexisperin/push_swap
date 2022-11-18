@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aperin <aperin@student.42.fr>              +#+  +:+       +#+         #
+#    By: aperin <aperin@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 11:30:34 by aperin            #+#    #+#              #
-#    Updated: 2022/11/17 14:22:32 by aperin           ###   ########.fr        #
+#    Updated: 2022/11/18 09:00:58 by aperin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,14 +25,12 @@ SRC_FILE	= main.c \
 				median/median_utils.c \
 				partition/twoway_partition.c \
 				partition/threeway_partition.c \
-				partition/push_twoway_partition.c \
+				partition/push_partition.c \
 				sort/sort_three.c \
 				sort/sort_three_utils.c \
 				sort/sort_utils.c \
 				sort/sort_utils2.c \
-				sort/sort.c \
-				partition/push_threeway_partition.c
-				# partition/push_partition.c
+				sort/sort.c
 				
 SRCS_DIR	= srcs
 OBJSDIR		= objs

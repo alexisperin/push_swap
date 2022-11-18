@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:32:57 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/16 13:22:55 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/18 09:03:04 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ int		stack_three_min(t_stack *stack);
 
 // Median
 int		get_median(t_stack *stack);
-int		get_median_bis(t_stack *stack);
 int		get_median_low(t_stack *stack);
 int		get_median_high(t_stack *stack);
 
@@ -81,8 +80,6 @@ int		nb_higher(t_stack *stack, int val, int partition);
 // Partition
 void	twoway_partition(t_stack **stack_a, t_stack **stack_b, int size);
 void	threeway_partition(t_stack **stack_a, t_stack **stack_b, int size);
-void	push_twoway_partition(t_stack **stack_a, t_stack **stack_b);
-void	push_threeway_partition(t_stack **stack_a, t_stack **stack_b);
 
 // Error
 int		print_error(void);
