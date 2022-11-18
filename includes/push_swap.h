@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:32:57 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/18 10:00:30 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/18 09:50:20 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ int		nb_higher(t_stack *stack, int val, int partition);
 // Partition
 void	twoway_partition(t_stack **stack_a, t_stack **stack_b, int size);
 void	threeway_partition(t_stack **stack_a, t_stack **stack_b, int size);
+void	push_twoway_partition(t_stack **stack_a, t_stack **stack_b);
+void	push_threeway_partition(t_stack **stack_a, t_stack **stack_b);
 
 // Error
 int		print_error(void);
