@@ -3,22 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   sort_bis.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:46:21 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/17 16:54:49 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/17 18:18:59 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	locate_partition(t_stack **stack_a, t_stack **stack_b)
+static int	locate_partition(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	*a_last;
-	t_stack	*b_last;
-	int		ret;
+	t_stack	*last_a;
+	t_stack	*last_b;
 
-	ret = 0;
+	last_a = stack_last(*stack_a);
+	last_b = stack_last(*stack_b);
+	if (empty(stack_b) || (*stack_a)->partition > (*stack_b)->partition)
+	{
+		if ((*stack_a)->partition >= last_a->partition)
+			return (1);
+		else
+			return (2);
+	}
+	else
+	{
+		if ((*stack_b)->partition >= last_b->partition)
+			return (3);
+		else
+			return (4);
+	}
 }
 
 void	sort_bis(t_stack **stack_a, t_stack **stack_b)
