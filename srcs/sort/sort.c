@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 10:58:47 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/18 09:00:12 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/18 10:00:53 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,10 @@ static void	push_next_partition(t_stack **stack_a, t_stack **stack_b)
 		while (*stack_b && (*stack_b)->partition == partition)
 			pa(stack_a, stack_b);
 	}
-	else
+	else if (stack_size_partition(*stack_b) <= 6)
 		push_twoway_partition(stack_a, stack_b);
+	else
+		push_threeway_partition(stack_a, stack_b);
 }
 
 void	sort(t_stack **stack_a, t_stack **stack_b)

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aperin <aperin@student.s19.be>             +#+  +:+       +#+         #
+#    By: aperin <aperin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 11:30:34 by aperin            #+#    #+#              #
-#    Updated: 2022/11/18 09:00:58 by aperin           ###   ########.fr        #
+#    Updated: 2022/11/18 09:59:57 by aperin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ SRC_FILE	= main.c \
 				median/median_utils.c \
 				partition/twoway_partition.c \
 				partition/threeway_partition.c \
-				partition/push_partition.c \
+				partition/push_twoway_partition.c \
+				partition/push_threeway_partition.c \
 				sort/sort_three.c \
 				sort/sort_three_utils.c \
 				sort/sort_utils.c \
