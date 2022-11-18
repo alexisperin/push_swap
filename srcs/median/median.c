@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   median.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 13:54:33 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/18 16:42:06 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/18 21:56:16 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "push_swap.h"
 
 static int	nb_lower(t_stack *stack, int val, int partition)
 {

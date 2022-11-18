@@ -6,11 +6,11 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 19:04:40 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/18 19:06:45 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/18 21:56:48 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../checker.h"
+#include "checker.h"
 
 size_t	ft_strlen(char *str)
 {

@@ -6,11 +6,11 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 19:52:20 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/18 19:17:07 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/18 21:56:16 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "push_swap.h"
 
 void	pa(t_stack **stack_a, t_stack **stack_b)
 {

@@ -6,12 +6,11 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:07:21 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/18 19:08:20 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/18 21:58:46 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
-#include "../../includes/checker.h"
+#include "checker.h"
 
 static char	*after_nl(char *save, size_t nl_index)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   partition_a.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 18:25:41 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/18 14:20:55 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/18 21:56:16 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "push_swap.h"
 
 static int	push_low_high(t_stack **stack_a, t_stack **stack_b, int loc)
 {

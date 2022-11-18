@@ -6,9 +6,11 @@
 #    By: aperin <aperin@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 11:30:34 by aperin            #+#    #+#              #
-#    Updated: 2022/11/18 20:03:08 by aperin           ###   ########.fr        #
+#    Updated: 2022/11/18 21:51:16 by aperin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+.SILENT:	bonus
 
 NAME		= push_swap
 B_NAME		= checker
@@ -50,6 +52,7 @@ B_SRC_FILE	= main_bonus.c \
 				
 SRCS_DIR	= srcs
 OBJSDIR		= objs
+INCDIR		= includes
 
 SRCS		= $(addprefix ${SRCS_DIR}/, ${SRC_FILE})
 B_SRCS		= $(addprefix ${SRCS_DIR}/, ${B_SRC_FILE})
@@ -58,17 +61,23 @@ B_OBJS		= $(addprefix ${OBJSDIR}/, $(addsuffix .o, $(basename ${B_SRC_FILE})))
 OBJS_DIR	= $(sort $(dir $(OBJS)))
 B_OBJS_DIR	= $(sort $(dir $(B_OBJS)))
 
+CC			= gcc
+CFLAGS		= -Wall -Wextra -Werror
+INCS		= -I ${INCDIR}
+
 ${OBJSDIR}/%.o: ${SRCS_DIR}/%.c
 			@mkdir -p ${OBJSDIR} ${OBJS_DIR} ${B_OBJS_DIR}
-			gcc -Wall -Wextra -Werror -c -o $@ $<
+			${CC} ${CFLAGS} ${INCS} -c -o $@ $<
 
 all:		${NAME}
 
 ${NAME}:	${OBJS}
-			gcc -Wall -Wextra -Werror ${OBJS} -o ${NAME}
+			${CC} ${CFLAGS} ${OBJS} -o ${NAME}
+
+${B_NAME}:	bonus
 
 bonus:		${NAME} ${B_OBJS}
-			@gcc -Wall -Wextra -Werror ${B_OBJS} -o ${B_NAME}
+			${CC} ${CFLAGS} ${B_OBJS} -o ${B_NAME}
 
 clean:
 			rm -rf ${OBJS_DIR}

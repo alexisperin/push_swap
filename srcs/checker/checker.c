@@ -6,11 +6,11 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 18:49:22 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/18 20:07:57 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/18 21:53:41 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/checker.h"
+#include "checker.h"
 
 static int	do_operation2(t_stack **stack_a, t_stack **stack_b, char *line)
 {
