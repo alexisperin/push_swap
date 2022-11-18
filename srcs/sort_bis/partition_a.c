@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 18:25:41 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/18 08:39:28 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/18 09:23:04 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,12 @@ static int	push_low_high(t_stack **stack_a, t_stack **stack_b, int loc)
 		(*stack_a)->partition *= 3;
 		(*stack_a)->partition += 1;
 		pb(stack_a, stack_b);
-		(*to_push)--;
 	}
 	else
 	{
 		(*stack_a)->partition *= 3;
 		pb(stack_a, stack_b);
 		rb(stack_b);
-		(*to_push)--;
 	}
 	return (1);
 }
@@ -40,12 +38,6 @@ static void	partition_end(t_stack **stack_a, t_stack **stack_b, int part)
 	{
 		tmp->partition = (part * 3) + 2;
 		tmp = tmp->next;
-	}
-	tmp = stack_last(*stack_b);
-	while (tmp->partition == (part * 3) + 1)
-	{
-		rrb(stack_b);
-		tmp = stack_last(*stack_b);
 	}
 	tmp = stack_last(*stack_a);
 	if (!sorted(*stack_a) && !stack_only_one_partition(*stack_a))
@@ -66,7 +58,7 @@ static void	threeway_partition(t_stack **stack_a, t_stack **stack_b, int size)
 	int	partition;
 
 	median_low = get_median_low(*stack_a);
-	median_high = get_median_high(*stack_b);
+	median_high = get_median_high(*stack_a);
 	to_push = ((size / 3) * 2) + size % 3;
 	partition = (*stack_a)->partition;
 	while (to_push > 0)
@@ -114,7 +106,7 @@ void	partition_a(t_stack **stack_a, t_stack **stack_b)
 	if (size <= 3)
 		return ;
 	else if (size <= 6)
-		twoway_partition_a(stack_a, stack_b, size);
+		twoway_partition(stack_a, stack_b, size);
 	else
-		threeway_partition_a(stack_a, stack_b, size);
+		threeway_partition(stack_a, stack_b, size);
 }
