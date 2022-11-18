@@ -3,23 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:33:48 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/18 17:31:09 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/18 20:06:50 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-void print_stack(t_stack *stack)
-{
-	while (stack)
-	{
-		printf("%d, part: %d\n", stack->value, stack->partition);
-		stack = stack->next;
-	}
-}
 
 int	main(int ac, char **av)
 {
@@ -33,14 +24,6 @@ int	main(int ac, char **av)
 		return (print_error());
 	stack_b = 0;
 	sort(&stack_a, &stack_b);
-	// if (sorted(stack_a))
-	// 	printf("SORTED\n");
-	// else
-	// 	printf("NOT SORTED\n");
-	// printf("---Stack A---\n");
-	// print_stack(stack_a);
-	// printf("---Stack B---\n");
-	// print_stack(stack_b);
 	free_stack(stack_a);
 	free_stack(stack_b);
 	return (0);

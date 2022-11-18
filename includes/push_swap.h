@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:32:57 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/18 16:56:36 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/18 20:05:23 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-#include <stdio.h> // TO REMOVE !!!
 
 typedef struct s_stack
 {
@@ -23,8 +22,6 @@ typedef struct s_stack
 	int				partition;
 	struct s_stack	*next;
 }					t_stack;
-
-void print_stack(t_stack *stack); // TO REMOVE !!!
 
 // Stack init and free
 t_stack	*init_stack(int ac, char **av);

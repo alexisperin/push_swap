@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 18:49:22 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/18 19:24:12 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/18 20:07:57 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ static int	do_operation(t_stack **stack_a, t_stack **stack_b, char *line)
 	else if (ft_strlen(line) == 3 && ft_strncmp(line, "rb\n", 3) == 0)
 		ft_rotate(stack_b);
 	else if (ft_strlen(line) == 3 && ft_strncmp(line, "rr\n", 3) == 0)
-		{
-			ft_rotate(stack_a);
-			ft_rotate(stack_b);
-		}
+	{
+		ft_rotate(stack_a);
+		ft_rotate(stack_b);
+	}
 	else
 		return (do_operation2(stack_a, stack_b, line));
 	return (0);

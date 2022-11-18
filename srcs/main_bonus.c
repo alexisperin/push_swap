@@ -6,20 +6,11 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 18:00:11 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/18 18:50:15 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/18 20:07:06 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
-
-void print_stack(t_stack *stack)
-{
-	while (stack)
-	{
-		printf("%d, part: %d\n", stack->value, stack->partition);
-		stack = stack->next;
-	}
-}
 
 int	main(int ac, char **av)
 {
@@ -38,10 +29,6 @@ int	main(int ac, char **av)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
-	// printf("---Stack A---\n");
-	// print_stack(stack_a);
-	// printf("---Stack B---\n");
-	// print_stack(stack_b);
 	free_stack(stack_a);
 	free_stack(stack_b);
 	return (0);

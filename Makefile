@@ -6,7 +6,7 @@
 #    By: aperin <aperin@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 11:30:34 by aperin            #+#    #+#              #
-#    Updated: 2022/11/18 19:11:15 by aperin           ###   ########.fr        #
+#    Updated: 2022/11/18 20:03:08 by aperin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,7 +68,7 @@ ${NAME}:	${OBJS}
 			gcc -Wall -Wextra -Werror ${OBJS} -o ${NAME}
 
 bonus:		${NAME} ${B_OBJS}
-			gcc -Wall -Wextra -Werror ${B_OBJS} -o ${B_NAME}
+			@gcc -Wall -Wextra -Werror ${B_OBJS} -o ${B_NAME}
 
 clean:
 			rm -rf ${OBJS_DIR}
