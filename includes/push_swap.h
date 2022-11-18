@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:32:57 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/18 09:50:20 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/18 12:17:03 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,12 @@ void	sort(t_stack **stack_a, t_stack **stack_b);
 void	sort_three(t_stack **stack);
 void	sort_first_three(t_stack **stack);
 
+// Sort bis
+void	partition_a(t_stack **stack_a, t_stack **stack_b);
+void	partition_a_end(t_stack **stack_a, t_stack **stack_b);
+void	partition_b(t_stack **stack_a, t_stack **stack_b);
+void	partition_b_end(t_stack **stack_a, t_stack **stack_b);
+
 // Sort utils
 int		sorted(t_stack *stack);
 int		sorted_partition(t_stack *stack);
@@ -78,10 +84,10 @@ int		nb_lower(t_stack *stack, int val, int partition);
 int		nb_higher(t_stack *stack, int val, int partition);
 
 // Partition
-void	twoway_partition(t_stack **stack_a, t_stack **stack_b, int size);
-void	threeway_partition(t_stack **stack_a, t_stack **stack_b, int size);
-void	push_twoway_partition(t_stack **stack_a, t_stack **stack_b);
-void	push_threeway_partition(t_stack **stack_a, t_stack **stack_b);
+// void	twoway_partition(t_stack **stack_a, t_stack **stack_b, int size);
+// void	threeway_partition(t_stack **stack_a, t_stack **stack_b, int size);
+// void	push_twoway_partition(t_stack **stack_a, t_stack **stack_b);
+// void	push_threeway_partition(t_stack **stack_a, t_stack **stack_b);
 
 // Error
 int		print_error(void);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_bis.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:46:21 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/17 18:18:59 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/18 16:21:34 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,49 +14,66 @@
 
 static int	locate_partition(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	*last_a;
-	t_stack	*last_b;
+	int	a;
+	int	a_end;
+	int	b;
+	int	b_end;
 
-	last_a = stack_last(*stack_a);
-	last_b = stack_last(*stack_b);
-	if (empty(stack_b) || (*stack_a)->partition > (*stack_b)->partition)
+	a = (*stack_a)->partition;
+	a_end = stack_last(*stack_a)->partition;
+	b = -1;
+	b_end = -1;
+	if (!empty(stack_b))
 	{
-		if ((*stack_a)->partition >= last_a->partition)
-			return (1);
-		else
-			return (2);
+		b = (*stack_b)->partition;
+		b_end = stack_last(*stack_b)->partition;
 	}
+	if (a >= a_end && a > b && a > b_end)
+		return (1);
+	else if (a_end > a && a_end > b && a_end > b_end)
+		return (2);
+	else if (b > a && b > a_end && b >= b_end)
+		return (3);
 	else
-	{
-		if ((*stack_b)->partition >= last_b->partition)
-			return (3);
-		else
-			return (4);
-	}
+		return (4);
 }
 
-void	sort_bis(t_stack **stack_a, t_stack **stack_b)
+void	sort(t_stack **stack_a, t_stack **stack_b)
 {
 	int	partition_location;
+	// int pass = 1;
 
 	while (!sorted(*stack_a) || !empty(stack_b))
 	{
+		// printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!! PASS: %d\n", pass);
+		// pass++;
 		partition_location = locate_partition(stack_a, stack_b);
+		// printf("!!!!!!!!! location: %d\n", partition_location);
+		// printf("---Stack A---1\n");
+		// print_stack(*stack_a);
+		// printf("---Stack B---1\n");
+		// print_stack(*stack_b);
 		if (partition_location == 1)
-			partition_a(stack_a, stack_a);
+			partition_a(stack_a, stack_b);
 		else if (partition_location == 2)
 			partition_a_end(stack_a, stack_b);
 		else if (partition_location == 3)
 			partition_b(stack_a, stack_b);
 		else if (partition_location == 4)
 			partition_b_end(stack_a, stack_b);
+		// printf("---Stack A---2\n");
+		// print_stack(*stack_a);
+		// printf("---Stack B---2\n");
+		// print_stack(*stack_b);
 		if (stack_size_partition(*stack_a) <= 3 && !sorted_partition(*stack_a))
 		{
 			if (stack_size(*stack_a) <= 3)
 				sort_three(stack_a);
 			else
 				sort_first_three(stack_a);
-			stack_set_sorted(*stack_a);
 		}
+		if (sorted_partition(*stack_a))
+			stack_set_sorted(*stack_a);
+
 	}
 }
