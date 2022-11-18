@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 18:00:11 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/18 18:14:49 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/18 18:50:15 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
 #include "../includes/checker.h"
 
 void print_stack(t_stack *stack)
@@ -33,7 +32,7 @@ int	main(int ac, char **av)
 	if (!stack_a)
 		return (print_error());
 	stack_b = 0;
-	if (do_operations(&stack_a, &stack_b) == -1)
+	if (checker(&stack_a, &stack_b) == -1)
 		write(1, "KO\n", 3);
 	if (sorted(stack_a) && empty(&stack_b))
 		write(1, "OK\n", 3);

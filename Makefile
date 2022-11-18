@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aperin <aperin@student.42.fr>              +#+  +:+       +#+         #
+#    By: aperin <aperin@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 11:30:34 by aperin            #+#    #+#              #
-#    Updated: 2022/11/18 18:20:55 by aperin           ###   ########.fr        #
+#    Updated: 2022/11/18 19:11:15 by aperin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,10 @@ SRC_FILE	= main.c \
 				partition/partition_b_end.c
 
 B_SRC_FILE	= main_bonus.c \
+				checker/checker.c \
 				stack/stack_init.c \
+				stack/stack_utils.c \
+				stack/stack_utils2.c \
 				utils/ft_atoi.c \
 				utils/ft_strncmp.c \
 				error/error.c \
@@ -64,7 +67,7 @@ all:		${NAME}
 ${NAME}:	${OBJS}
 			gcc -Wall -Wextra -Werror ${OBJS} -o ${NAME}
 
-bonus:		${B_OBJS}
+bonus:		${NAME} ${B_OBJS}
 			gcc -Wall -Wextra -Werror ${B_OBJS} -o ${B_NAME}
 
 clean:

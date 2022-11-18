@@ -6,11 +6,11 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:07:19 by aperin            #+#    #+#             */
-/*   Updated: 2022/10/28 08:41:55 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/18 19:07:55 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../../includes/checker.h"
 
 char	*gnl_free(char *str1, char *str2)
 {

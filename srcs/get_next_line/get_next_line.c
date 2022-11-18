@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:07:21 by aperin            #+#    #+#             */
-/*   Updated: 2022/10/28 09:40:41 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/18 19:08:20 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <limits.h>
-#include "get_next_line.h"
+#include "../../includes/checker.h"
 
 static char	*after_nl(char *save, size_t nl_index)
 {
@@ -96,7 +96,7 @@ char	*get_next_line(int fd)
 	char		*res;
 	size_t		nl_index;
 
-	if (fd < 0 || fd >= OPEN_MAX || BUFFER_SIZE < 1)
+	if (fd < 0 || BUFFER_SIZE < 1)
 		return (0);
 	if (!found_nl(save))
 	{

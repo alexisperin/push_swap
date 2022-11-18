@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 18:07:16 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/18 18:21:35 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/18 19:06:34 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # define BUFFER_SIZE 16
 
 // Checker
-int		do_operations(t_stack **stack_a, t_stack **stack_b);
+int		checker(t_stack **stack_a, t_stack **stack_b);
 
 // Get next line
 char	*get_next_line(int fd);
@@ -31,5 +31,6 @@ char	*strjoin_free(char *save, char *buf, size_t len);
 
 // Utils
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+size_t	ft_strlen(char *str);
 
 #endif
