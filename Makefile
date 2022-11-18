@@ -6,7 +6,7 @@
 #    By: aperin <aperin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 11:30:34 by aperin            #+#    #+#              #
-#    Updated: 2022/11/18 12:15:06 by aperin           ###   ########.fr        #
+#    Updated: 2022/11/18 16:38:45 by aperin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,20 +23,15 @@ SRC_FILE	= main.c \
 				operations/reverse_rotate.c \
 				median/median.c \
 				median/median_utils.c \
-				partition/twoway_partition.c \
-				partition/threeway_partition.c \
-				partition/push_twoway_partition.c \
-				partition/push_threeway_partition.c \
 				sort/sort_three.c \
 				sort/sort_three_utils.c \
 				sort/sort_utils.c \
 				sort/sort_utils2.c \
-				sort_bis/sort_bis.c \
-				sort_bis/partition_a.c \
-				sort_bis/partition_a_end.c \
-				sort_bis/partition_b.c \
-				sort_bis/partition_b_end.c \
-				# sort/sort.c
+				sort/sort.c \
+				partition/partition_a.c \
+				partition/partition_a_end.c \
+				partition/partition_b.c \
+				partition/partition_b_end.c
 				
 SRCS_DIR	= srcs
 OBJSDIR		= objs
