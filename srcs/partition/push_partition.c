@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 09:43:28 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/17 14:15:46 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/18 09:37:41 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,8 @@ static void	push_low(t_stack **stack_a, t_stack **stack_b, int *to_push)
 	(*to_push)--;
 }
 
-static void	push_threeway_part2(t_stack **stack_a, t_stack **stack_b, int part)
+static void	push_threeway_part2(t_stack **stack_b, int part)
 {
-	(void) stack_a;
 	t_stack	*tmp;
 
 	tmp = *stack_b;
@@ -49,10 +48,6 @@ static void	push_threeway_part2(t_stack **stack_a, t_stack **stack_b, int part)
 			tmp = stack_last(*stack_b);
 		}
 	}
-	// printf("---Stack A---2\n");
-	// print_stack(*stack_a);
-	// printf("---Stack B---2\n");
-	// print_stack(*stack_b);
 }
 
 void	push_threeway_partition(t_stack **stack_a, t_stack **stack_b)
@@ -68,13 +63,6 @@ void	push_threeway_partition(t_stack **stack_a, t_stack **stack_b)
 	size = stack_size_partition(*stack_b);
 	to_push = ((size / 3) * 2) + (size % 3);
 	partition = (*stack_b)->partition;
-	// printf("median low: %d\n", median_low);
-	// printf("median high: %d\n", median_high);
-	// printf("to push: %d\n", to_push);
-	// printf("---Stack A---1\n");
-	// print_stack(*stack_a);
-	// printf("---Stack B---1\n");
-	// print_stack(*stack_b);
 	while (to_push > 0)
 	{
 		if ((*stack_b)->value > median_high)
@@ -87,5 +75,5 @@ void	push_threeway_partition(t_stack **stack_a, t_stack **stack_b)
 			rb(stack_b);
 		}
 	}
-	push_threeway_part2(stack_a, stack_b, partition);
+	push_threeway_part2(stack_b, partition);
 }
