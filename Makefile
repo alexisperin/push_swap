@@ -6,7 +6,7 @@
 #    By: aperin <aperin@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 11:30:34 by aperin            #+#    #+#              #
-#    Updated: 2022/11/18 22:45:10 by aperin           ###   ########.fr        #
+#    Updated: 2022/11/19 10:53:57 by aperin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRC_FILE	= main.c \
 				stack/stack_utils.c \
 				stack/stack_utils2.c \
 				utils/ft_atoi.c \
+				utils/ft_split.c \
 				error/error.c \
 				operations/operations.c \
 				operations/swap.c \
@@ -77,7 +78,7 @@ ${NAME}:	${OBJS}
 ${B_NAME}:	bonus
 
 bonus:		${NAME} ${B_OBJS}
-			${CC} ${CFLAGS} ${B_OBJS} -o ${B_NAME}
+			# ${CC} ${CFLAGS} ${B_OBJS} -o ${B_NAME}
 
 clean:
 			rm -rf ${OBJS_DIR}

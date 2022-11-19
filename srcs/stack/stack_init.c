@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 13:47:08 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/18 22:44:58 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/19 10:56:35 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,18 @@ static t_stack	*stack_new(const char *str)
 	return (stack);
 }
 
-t_stack	*init_stack(int ac, char **av)
+t_stack	*init_stack(char **av, int start)
 {
 	int		i;
 	t_stack	*stack_a;
 	t_stack	*tmp;
 
-	stack_a = stack_new(av[1]);
+	stack_a = stack_new(av[start]);
 	tmp = stack_a;
 	if (!stack_a)
 		return (0);
-	i = 2;
-	while (i < ac)
+	i = start + 1;
+	while (av[i])
 	{
 		tmp->next = stack_new(av[i]);
 		if (!tmp->next || is_duplicate(tmp->next->value, stack_a))

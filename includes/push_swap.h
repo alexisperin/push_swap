@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:32:57 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/18 20:05:23 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/19 10:58:05 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_stack
 }					t_stack;
 
 // Stack init and free
-t_stack	*init_stack(int ac, char **av);
+t_stack	*init_stack(char **av, int start);
 t_stack	*free_stack(t_stack *stack);
 
 // Operations
@@ -77,5 +77,6 @@ int		print_error(void);
 
 // Utils
 int		ft_atoi(const char *str, int *invalid);
+char	**ft_split(const char *str, char c);
 
 #endif

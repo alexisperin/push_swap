@@ -6,11 +6,11 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:33:48 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/18 22:43:24 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/19 10:56:12 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 int	main(int ac, char **av)
 {
@@ -19,7 +19,10 @@ int	main(int ac, char **av)
 
 	if (ac < 2)
 		return (0);
-	stack_a = init_stack(ac, av);
+	if (ac == 2)
+		stack_a = init_stack(ft_split(av[1], ' '), 0);
+	else
+		stack_a = init_stack(av, 1);
 	if (!stack_a)
 		return (print_error());
 	stack_b = 0;
