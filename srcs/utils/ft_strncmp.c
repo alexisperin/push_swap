@@ -6,11 +6,11 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 18:16:47 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/18 21:53:49 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/19 11:25:13 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include <stddef.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

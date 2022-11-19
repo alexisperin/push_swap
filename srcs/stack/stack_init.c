@@ -6,11 +6,11 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 13:47:08 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/19 10:56:35 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/19 11:23:57 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "push_swap.h"
 
 static int	is_duplicate(int val, t_stack *stack)
 {

@@ -6,11 +6,9 @@
 #    By: aperin <aperin@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 11:30:34 by aperin            #+#    #+#              #
-#    Updated: 2022/11/19 10:53:57 by aperin           ###   ########.fr        #
+#    Updated: 2022/11/19 11:20:54 by aperin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-.SILENT:	bonus
 
 NAME		= push_swap
 B_NAME		= checker
@@ -41,6 +39,7 @@ B_SRC_FILE	= main_bonus.c \
 				stack/stack_utils.c \
 				stack/stack_utils2.c \
 				utils/ft_atoi.c \
+				utils/ft_split.c \
 				utils/ft_strncmp.c \
 				error/error.c \
 				operations/operations.c \
@@ -78,14 +77,14 @@ ${NAME}:	${OBJS}
 ${B_NAME}:	bonus
 
 bonus:		${NAME} ${B_OBJS}
-			# ${CC} ${CFLAGS} ${B_OBJS} -o ${B_NAME}
+			@${CC} ${CFLAGS} ${B_OBJS} -o ${B_NAME}
 
 clean:
-			rm -rf ${OBJS_DIR}
 			rm -rf ${OBJSDIR}
 
 fclean:		clean
 			rm -f ${NAME}
+			rm -f ${B_NAME}
 
 re:			fclean all
 
