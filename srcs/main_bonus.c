@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 18:00:11 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/19 11:11:57 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/21 15:30:01 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ int	main(int ac, char **av)
 		return (print_error());
 	stack_b = 0;
 	if (checker(&stack_a, &stack_b) == -1)
-		write(1, "KO\n", 3);
-	if (sorted(stack_a) && empty(&stack_b))
+		print_error();
+	else if (sorted(stack_a) && empty(&stack_b))
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);

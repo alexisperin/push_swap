@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 10:10:43 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/18 21:56:16 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/21 15:26:49 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_rotate(t_stack **stack)
 	t_stack	*tmp;
 	t_stack	*first;
 
-	if (!stack || !(*stack)->next)
+	if (!*stack || !(*stack)->next)
 		return ;
 	first = *stack;
 	*stack = (*stack)->next;

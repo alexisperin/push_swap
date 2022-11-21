@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aperin <aperin@student.s19.be>             +#+  +:+       +#+         #
+#    By: aperin <aperin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 11:30:34 by aperin            #+#    #+#              #
-#    Updated: 2022/11/19 11:20:54 by aperin           ###   ########.fr        #
+#    Updated: 2022/11/21 15:27:04 by aperin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,7 +77,7 @@ ${NAME}:	${OBJS}
 ${B_NAME}:	bonus
 
 bonus:		${NAME} ${B_OBJS}
-			@${CC} ${CFLAGS} ${B_OBJS} -o ${B_NAME}
+			${CC} ${CFLAGS} ${B_OBJS} -o ${B_NAME}
 
 clean:
 			rm -rf ${OBJSDIR}
