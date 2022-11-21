@@ -6,7 +6,7 @@
 #    By: aperin <aperin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 11:30:34 by aperin            #+#    #+#              #
-#    Updated: 2022/11/21 15:27:04 by aperin           ###   ########.fr        #
+#    Updated: 2022/11/21 15:37:59 by aperin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,4 +88,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY:		all clean fclean re NAME
+.PHONY:		all clean fclean re NAME bonus B_NAME
