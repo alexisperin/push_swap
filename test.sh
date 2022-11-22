@@ -5,7 +5,7 @@ declare -i max=0
 declare -i i=1
 declare -i moy=0
 FILE=checker
-FILEBASIC=checker_linux
+FILEBASIC=checker_Mac
 PROJECT=push_swap
 
 if [ $# -le 1 ]

@@ -6,7 +6,7 @@
 #    By: aperin <aperin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 11:30:34 by aperin            #+#    #+#              #
-#    Updated: 2022/11/21 15:37:59 by aperin           ###   ########.fr        #
+#    Updated: 2022/11/22 10:34:12 by aperin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,18 +66,18 @@ CFLAGS		= -Wall -Wextra -Werror
 INCS		= -I ${INCDIR}
 
 ${OBJSDIR}/%.o: ${SRCS_DIR}/%.c
-			@mkdir -p ${OBJSDIR} ${OBJS_DIR} ${B_OBJS_DIR}
+			mkdir -p ${OBJSDIR} ${OBJS_DIR} ${B_OBJS_DIR}
 			${CC} ${CFLAGS} ${INCS} -c -o $@ $<
 
 all:		${NAME}
 
 ${NAME}:	${OBJS}
-			${CC} ${CFLAGS} ${OBJS} -o ${NAME}
+			${CC} ${OBJS} -o ${NAME}
 
-${B_NAME}:	bonus
+${B_NAME}:	${B_OBJS}
+			${CC} ${B_OBJS} -o ${B_NAME}
 
-bonus:		${NAME} ${B_OBJS}
-			${CC} ${CFLAGS} ${B_OBJS} -o ${B_NAME}
+bonus:		${B_NAME}	
 
 clean:
 			rm -rf ${OBJSDIR}
