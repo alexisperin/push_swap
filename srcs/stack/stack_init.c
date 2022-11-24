@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 13:47:08 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/19 11:23:57 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/24 08:50:12 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ t_stack	*init_stack(char **av, int start)
 	t_stack	*stack_a;
 	t_stack	*tmp;
 
+	if (!av)
+		return (0);
 	stack_a = stack_new(av[start]);
 	tmp = stack_a;
 	if (!stack_a)
