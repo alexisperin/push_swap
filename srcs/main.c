@@ -6,7 +6,7 @@
 /*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 11:33:48 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/19 10:56:12 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/25 08:33:22 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int ac, char **av)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
-	if (ac < 2)
+	if (ac < 2 || (ac == 2 && av[1][0] == 0))
 		return (0);
 	if (ac == 2)
 		stack_a = init_stack(ft_split(av[1], ' '), 0);

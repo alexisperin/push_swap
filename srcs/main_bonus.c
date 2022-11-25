@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aperin <aperin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aperin <aperin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 18:00:11 by aperin            #+#    #+#             */
-/*   Updated: 2022/11/21 15:30:01 by aperin           ###   ########.fr       */
+/*   Updated: 2022/11/25 08:33:10 by aperin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int ac, char **av)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
-	if (ac < 2)
+	if (ac < 2 || (ac == 2 && av[1][0] == 0))
 		return (0);
 	if (ac == 2)
 		stack_a = init_stack(ft_split(av[1], ' '), 0);
